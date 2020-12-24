@@ -1,6 +1,4 @@
-# NVCode
-
-![NVCode pic](./utils/images/nvim.png)
+# Sirtoolkit
 
 ## Install in one command
 
