@@ -105,14 +105,22 @@ let g:which_key_map.F = {
       \ }
 
 " f is for Flutter Commands 
-" let g:which_key_map.f = {
-"       \ 'name' : 'Flutter' ,
-"       \ 'r' : [':Farr --source=vimgrep'    , 'file'],
-"       \ 'p' : [':Farr --source=rgnvim'     , 'project'],
-"       \ 'p' : [':Farr --source=rgnvim'     , 'project'],
-"       \ 'p' : [':Farr --source=rgnvim'     , 'project'],
-"       \ 'p' : [':Farr --source=rgnvim'     , 'project'],
-"       \ }
+let g:which_key_map.f = {
+      \ 'name' : 'Flutter' ,
+      \ 'r' : [':CocCommand flutter.run'             , 'Flutter run'],
+      \ 'C' : [':CocCommand flutter.create'          , 'Flutter Create'],
+      \ 'd' : [':CocCommand flutter.doctor'          , 'Flutter Doctor'],
+      \ 'p' : [':CocCommand flutter.pub.get'         , 'Flutter Pub Get'],
+      \ 'D' : [':CocCommand flutter.devices'         , 'Flutter Devices'],
+      \ 'e' : [':CocCommand flutter.emulators'       , 'Flutter Emulators'],
+      \ 'O' : [':CocCommand flutter.outline'         , 'Flutter Outline'],
+      \ 'q' : [':CocCommand flutter.dev.quit'        , 'Flutter Quit'],
+      \ 'H' : [':CocCommand flutter.dev.hotReload'   , 'Flutter Hot Reload'],
+      \ 'h' : [':CocCommand flutter.dev.hotRestart'  , 'Flutter Hot Restart'],
+      \ 's' : [':CocCommand flutter.dev.screenshot'  , 'Flutter Screenshot'],
+      \ 'o' : [':CocCommand flutter.dev.openDevLog'  , 'Flutter open Dev Log'],
+      \ 'c' : [':CocCommand flutter.dev.clearDevLog' , 'Flutter Clear Dev Log'],
+      \ }
 
 
 " k is for task
