@@ -47,32 +47,16 @@
   //"snippets.userSnippetsDirectory": "~/.config/nvim/snips",
 
   // emmet
-  // explorer
-  "explorer.width": 30,
-  "explorer.file.root.template": "[icon] [git] [hidden & 1][root]",
-  "explorer.icon.enableNerdfont": true,
-  "explorer.previewAction.onHover": false,
-  "explorer.icon.enableVimDevicons": false,
-  "explorer.file.showHiddenFiles": false,
-  "explorer.keyMappings.global": {
-    "<cr>": ["expandable?", "expand", "open"],
-    "v": "open:vsplit"
-  },
-
   "languageserver": {
     "lua": {
       "command": "/home/chris/.luambenvs/neovim4/bin/lua-lsp",
       "filetypes": ["lua"],
       "trace.server": "verbose"
     }
-  }
-  // lua
-  //"lua.useSumnekoLs": true,
-  //"lua.commandPath": "/home/chris/.luambenvs/neovim3/bin/lua-lsp"
-  //"lua.enable": true,
-  //"Lua.completion.enable": true,
-  //"Lua.runtime.version": "Lua 5.1",
-  //"Lua.runtime.path": ["?.lua", "?/init.lua", "?/?.lua"],
-  //"lua.version": "5.1"
-  //"lua.commandPath": "/home/chris/.vscode-insiders/extensions/sumneko.lua-1.0.5/server/bin/Linux/lua-language-server"
+  },
+  "flutter.enabled": true,
+  "flutter.UIPath": true,
+  "flutter.sdk.dart-lookup": "dart",
+  "flutter.sdk.flutter-lookup": "flutter",
+  "flutter.openDevLogSplitCommand": "10split"
 }
