@@ -120,7 +120,6 @@ let g:which_key_map.f = {
       \ 's' : [':CocCommand flutter.dev.screenshot'  , 'Flutter Screenshot'],
       \ 'o' : [':CocCommand flutter.dev.openDevLog'  , 'Flutter open Dev Log'],
       \ 'c' : [':CocCommand flutter.dev.clearDevLog' , 'Flutter Clear Dev Log'],
-      \ 'u' : [':<Plug>(coc-codeaction-selected)'    , 'Flutter Code Action'],
       \ }
 
 

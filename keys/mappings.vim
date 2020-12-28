@@ -95,3 +95,4 @@ endif
 " Better nav for omnicomplete
 inoremap <expr> <c-j> ("\<C-n>")
 inoremap <expr> <c-k> ("\<C-p>")
+nmap <leader>u  <Plug>(coc-codeaction-selected)
