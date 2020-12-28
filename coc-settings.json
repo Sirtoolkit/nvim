@@ -15,9 +15,9 @@
   "coc.source.buffer.priority": 4,
 
   // diagnostics
-  "diagnostic.errorSign": " ",
+  "diagnostic.errorSign": "",
   "diagnostic.warningSign": " ",
-  "diagnostic.infoSign": "",
+  "diagnostic.infoSign": "",
   "diagnostic.hintSign": " ",
   // "diagnostic.displayByAle": true,
   // "diagnostic.virtualText": true, // this won't work with codelens when error on same line
@@ -55,8 +55,5 @@
     }
   },
   "flutter.enabled": true,
-  "flutter.UIPath": true,
-  "flutter.sdk.dart-lookup": "dart",
-  "flutter.sdk.flutter-lookup": "flutter",
-  "flutter.openDevLogSplitCommand": "10split"
+  "flutter.UIPath": true
 }
