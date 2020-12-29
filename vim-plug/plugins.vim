@@ -85,7 +85,9 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Debugging
     Plug 'prabirshrestha/vim-lsp'
     Plug 'mattn/vim-lsp-settings'
-  endif
+    " Live Server
+    Plug  'turbio/bracey.vim', {'do': 'npm install --prefix server'}
+    endif
 
 call plug#end()
 

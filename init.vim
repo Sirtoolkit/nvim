@@ -44,6 +44,7 @@ else
   source $HOME/.config/nvim/plug-config/vim-lsp.vim
   source $HOME/.config/nvim/plug-config/nerdtree.vim
   source $HOME/.config/nvim/plug-config/dev-icons.vim
+  source $HOME/.config/nvim/plug-config/bracey.vim
 endif
 
 " Add paths to node and python here
