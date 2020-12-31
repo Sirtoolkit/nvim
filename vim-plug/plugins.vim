@@ -49,12 +49,16 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Status Line
     Plug 'maximbaz/lightline-ale'
     Plug 'itchyny/lightline.vim'
-    " " Git
+    " Git
     Plug 'airblade/vim-gitgutter'
     Plug 'tpope/vim-fugitive'
     Plug 'tpope/vim-rhubarb'
     Plug 'junegunn/gv.vim'
     Plug 'rhysd/git-messenger.vim'
+    " FZF
+    Plug 'junegunn/fzf', { 'do': { -> fzf#install()  }  }
+    Plug 'yuki-ycino/fzf-preview.vim', { 'branch': 'release', 'do': ':UpdateRemotePlugins'  }
+    Plug 'junegunn/fzf.vim'
     " Start Screen
     Plug 'mhinz/vim-startify'
     " See what keys do like in emacs
@@ -89,7 +93,9 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug  'turbio/bracey.vim', {'do': 'npm install --prefix server'}
     " Ranger
     Plug 'kevinhwang91/rnvimr', {'do': 'make sync'}
-    endif
+    " Markdown Preview
+    " Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & npm install'   }
+  endif
 
 call plug#end()
 
