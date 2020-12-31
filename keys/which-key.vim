@@ -210,11 +210,6 @@ let g:which_key_map.g = {
       \ 'v' : [':GV'                               , 'view commits'],
       \ 'V' : [':GV!'                              , 'view buffer commits'],
       \ }
-      " \ 'A' : [':Git add %'                        , 'add current'],
-      " \ 'S' : [':!git status'                      , 'status'],
-" 
-" 
-" 
 
 let g:which_key_map.G = {
       \ 'name' : '+gist' ,
