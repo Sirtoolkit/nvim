@@ -89,7 +89,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Debugging
     Plug 'prabirshrestha/vim-lsp'
     Plug 'mattn/vim-lsp-settings'
-    Plug 'puremourning/vimspector'
     Plug 'szw/vim-maximizer'
     " Live Server
     Plug  'turbio/bracey.vim', {'do': 'npm install --prefix server'}
