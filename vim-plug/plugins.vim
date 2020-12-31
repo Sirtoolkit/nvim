@@ -89,10 +89,14 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Debugging
     Plug 'prabirshrestha/vim-lsp'
     Plug 'mattn/vim-lsp-settings'
+    Plug 'puremourning/vimspector'
+    Plug 'szw/vim-maximizer'
     " Live Server
     Plug  'turbio/bracey.vim', {'do': 'npm install --prefix server'}
     " Ranger
     Plug 'kevinhwang91/rnvimr', {'do': 'make sync'}
+    " Terminal
+    Plug 'voldikss/vim-floaterm'
     " Markdown Preview
     " Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & npm install'   }
   endif

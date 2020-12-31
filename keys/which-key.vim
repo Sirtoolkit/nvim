@@ -258,4 +258,36 @@ let g:which_key_map.l = {
       \ 'z' : [':CocDisable'                         , 'disable CoC'],
       \ 'Z' : [':CocEnable'                          , 'enable CoC'],
       \ }
+" d is for debug
+let g:which_key_map.d = {
+      \ 'name' : '+debug' ,
+      \ 'b' : ['<Plug>VimspectorToggleBreakpoint'              , 'breakpoint'],
+      \ 'B' : ['<Plug>VimspectorToggleConditionalBreakpoint'   , 'conditional breakpoint'],
+      \ 'c' : ['<Plug>VimspectorRunToCursor'                   , 'run to cursor'],
+      \ 'd' : ['<Plug>VimspectorContinue'                      , 'continue'],
+      \ 'f' : ['<Plug>VimspectorAddFunctionBreakpoint'         , 'function breakpoint'],
+      \ 'm' : [':MaximizerToggle'                              , 'maximize window'],
+      \ 'o' : ['<Plug>VimspectorStepOver'                      , 'step over'],
+      \ 'O' : ['<Plug>VimspectorStepOut'                       , 'step out'],
+      \ 'i' : ['<Plug>VimspectorStepInto'                      , 'step into'],
+      \ 'p' : ['<Plug>VimspectorPause'                         , 'pause'],
+      \ 'r' : ['<Plug>VimspectorRestart'                       , 'restart'],
+      \ 's' : ['<Plug>VimspectorStop'                          , 'stop'],
+      \ }
+" t is for terminal
+let g:which_key_map.t = {
+      \ 'name' : '+terminal' ,
+      \ ';' : [':FloatermNew --wintype=normal --height=6'        , 'terminal'],
+      \ 'f' : [':FloatermNew fzf'                               , 'fzf'],
+      \ 'g' : [':FloatermNew lazygit'                           , 'git'],
+      \ 'd' : [':FloatermNew lazydocker'                        , 'docker'],
+      \ 'n' : [':FloatermNew node'                              , 'node'],
+      \ 'N' : [':FloatermNew nnn'                               , 'nnn'],
+      \ 'p' : [':FloatermNew python'                            , 'python'],
+      \ 'm' : [':FloatermNew lazynpm'                           , 'npm'],
+      \ 'r' : [':FloatermNew ranger'                            , 'ranger'],
+      \ 't' : [':FloatermToggle'                                , 'toggle'],
+      \ 'y' : [':FloatermNew ytop'                              , 'ytop'],
+      \ 's' : [':FloatermNew ncdu'                              , 'ncdu'],
+      \}
 call which_key#register('<Space>', "g:which_key_map")
