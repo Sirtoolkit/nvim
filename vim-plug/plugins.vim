@@ -5,7 +5,6 @@ if empty(glob('~/.config/nvim/autoload/plug.vim'))
   "autocmd VimEnter * PlugInstall
   autocmd VimEnter * PlugInstall | source $MYVIMRC
 endif
-
 call plug#begin('~/.config/nvim/autoload/plugged')
 
     " Better Comments
@@ -44,6 +43,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'alvan/vim-closetag'
     " Themes
     Plug 'christianchiarulli/nvcode-color-schemes.vim'
+    " Plug 'joshdick/onedark.vim'
     " Intellisense
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     " Status Line
@@ -61,6 +61,9 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'junegunn/fzf.vim'
     " Start Screen
     Plug 'mhinz/vim-startify'
+    Plug 'nvim-lua/popup.nvim'
+    Plug 'nvim-lua/plenary.nvim'
+    Plug 'nvim-telescope/telescope.nvim'
     " See what keys do like in emacs
     Plug 'liuchengxu/vim-which-key'
     " Snippets
@@ -84,6 +87,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'mattn/webapi-vim'
     " Colorizer
     Plug 'norcalli/nvim-colorizer.lua'
+    Plug 'frazrepo/vim-rainbow'
     " Intuitive buffer closing
     Plug 'moll/vim-bbye'
     " Debugging
