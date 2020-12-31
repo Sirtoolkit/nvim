@@ -87,6 +87,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'mattn/vim-lsp-settings'
     " Live Server
     Plug  'turbio/bracey.vim', {'do': 'npm install --prefix server'}
+    " Ranger
+    Plug 'kevinhwang91/rnvimr', {'do': 'make sync'}
     endif
 
 call plug#end()
