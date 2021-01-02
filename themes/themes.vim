@@ -1,14 +1,7 @@
 hi Comment cterm=italic
-let g:nvcode_termcolors=256
-let g:onedark_termcolors=16
-
 syntax on
-" colorscheme nord
 " colorscheme onedark
-colorscheme nvcode
-" colorscheme onedark
-" colorscheme TSnazzy
-" colorscheme aurora
+colorscheme  gruvbox
 " checks if your terminal has 24-bit color support
 if (has("termguicolors"))
       set termguicolors
@@ -16,7 +9,6 @@ if (has("termguicolors"))
         endif
 " Syntax highlighting
 let g:python_highlight_all=1
-
 " Change this when you know where i3 will be
 aug i3config_ft_detection
     au!

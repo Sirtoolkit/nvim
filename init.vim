@@ -6,23 +6,17 @@
 
 
 " General Settings
-if !exists('g:vscode')
-  source $HOME/.config/nvim/plug-config/polyglot.vim
-endif
 source $HOME/.config/nvim/vim-plug/plugins.vim
 source $HOME/.config/nvim/general/settings.vim
 source $HOME/.config/nvim/general/functions.vim
 source $HOME/.config/nvim/keys/mappings.vim
 
-if exists('g:vscode')
   " VS Code extension
-  source $HOME/.config/nvim/vscode/settings.vim
   source $HOME/.config/nvim/plug-config/easymotion.vim
   source $HOME/.config/nvim/plug-config/highlightyank.vim
-else
 
   " Themes
-  source $HOME/.config/nvim/themes/onedark.vim
+  source $HOME/.config/nvim/themes/themes.vim
   source $HOME/.config/nvim/themes/airline.vim
 
   " Plugin Configuration
@@ -32,7 +26,6 @@ else
   source $HOME/.config/nvim/plug-config/coc/coc.vim
   source $HOME/.config/nvim/plug-config/coc/coc-extensions.vim
   source $HOME/.config/nvim/plug-config/easymotion.vim
-  source $HOME/.config/nvim/plug-config/start-screen.vim
   source $HOME/.config/nvim/plug-config/gitgutter.vim
   source $HOME/.config/nvim/plug-config/git-messenger.vim
   source $HOME/.config/nvim/plug-config/closetags.vim
@@ -45,12 +38,8 @@ else
   source $HOME/.config/nvim/plug-config/nerdtree.vim
   source $HOME/.config/nvim/plug-config/dev-icons.vim
   source $HOME/.config/nvim/plug-config/bracey.vim
-  source $HOME/.config/nvim/plug-config/rnvimr.vim
-  source $HOME/.config/nvim/plug-config/ranger.vim
-  source $HOME/.config/nvim/plug-config/floaterm.vim
   source $HOME/.config/nvim/plug-config/rainbow.vim
-  " source $HOME/.config/nvim/plug-config/markdown.vim
-endif
+  source $HOME/.config/nvim/plug-config/minimap.vim
 
 " Add paths to node and python here
 if !empty(glob("~/.config/nvim/paths.vim"))

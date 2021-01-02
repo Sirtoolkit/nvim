@@ -1,12 +1,3 @@
-" enable tabline
-" let g:airline#extensions#tabline#enabled = 1
-" let g:airline#extensions#tabline#left_sep = ''
-" let g:airline#extensions#tabline#left_alt_sep = ''
-" let g:airline#extensions#tabline#right_sep = ''
-" let g:airline#extensions#tabline#right_alt_sep = ''
-" let airline#extensions#tabline#show_splits = 0
-" let airline#extensions#tabline#tabs_label = ''
-
 " Disable tabline close button
 let g:airline#extensions#tabline#show_close_button = 0
 let g:airline#extensions#tabline#show_tab_type = 0
@@ -38,7 +29,7 @@ let g:airline_section_c = airline#section#create([''])
 " let g:airline_section_z = airline#section#create(['linenr'])
 
 " Switch to your current theme
-let g:airline_theme = 'onedark'
+let g:airline_theme = 'gruvbox'
 
 " Always show tabs
 set showtabline=2
@@ -47,8 +38,5 @@ set showtabline=2
 set noshowmode
 
 " Sections
-" let g:airline_section_c = ''
 let g:airline_section_a = " SirPicsa"
-" let g:airline_section_a = ""
-" let g:airline_section_y = ''
 let g:webdevicons_enable_airline_tabline = 1

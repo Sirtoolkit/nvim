@@ -47,7 +47,7 @@ else
   " Alternate way to save
   nnoremap <silent> <C-s> :w<CR>
   " Alternate way to quit
-  nnoremap <silent> <C-Q> :q<CR>
+  nnoremap <silent> <C-Q> :q!<CR>
   " Use control-c instead of escape
   nnoremap <silent> <C-c> <Esc>
   " <TAB>: completion.
@@ -95,4 +95,3 @@ endif
 " Better nav for omnicomplete
 inoremap <expr> <c-j> ("\<C-n>")
 inoremap <expr> <c-k> ("\<C-p>")
-nmap <leader>u  <Plug>(coc-codeaction-selected)

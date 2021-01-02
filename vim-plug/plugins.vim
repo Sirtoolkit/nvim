@@ -9,16 +9,11 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
     " Better Comments
     Plug 'tpope/vim-commentary'
-   " Repeat stuff
+    " Repeat stuff
     Plug 'tpope/vim-repeat'
-   " Useful for React Commenting 
-    Plug 'suy/vim-context-commentstring'
     " highlight all matches under cursor
     Plug 'RRethy/vim-illuminate'
-  if exists('g:vscode')
-    " Easy motion for VSCode
-    Plug 'ChristianChiarulli/vscode-easymotion'
-  else
+    Plug 'easymotion/vim-easymotion'
     Plug 'machakann/vim-highlightedyank'
     " Easymotion
     Plug 'easymotion/vim-easymotion'
@@ -27,13 +22,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
     " Surround
     Plug 'tpope/vim-surround'
-    " Have the file system follow you around
-    Plug 'airblade/vim-rooter'
-   " Better Syntax Support
-    Plug 'sheerun/vim-polyglot'
     " Treesitter
     Plug 'nvim-treesitter/nvim-treesitter'
-    Plug 'nvim-treesitter/playground'
     " Cool Icons
     Plug 'kyazdani42/nvim-web-devicons'
     Plug 'ryanoasis/vim-devicons'
@@ -42,8 +32,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Closetags
     Plug 'alvan/vim-closetag'
     " Themes
-    Plug 'christianchiarulli/nvcode-color-schemes.vim'
-    " Plug 'joshdick/onedark.vim'
+    Plug 'joshdick/onedark.vim'
+    Plug 'morhetz/gruvbox'
     " Intellisense
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     " Status Line
@@ -55,15 +45,12 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'tpope/vim-rhubarb'
     Plug 'junegunn/gv.vim'
     Plug 'rhysd/git-messenger.vim'
-    " FZF
-    Plug 'junegunn/fzf', { 'do': { -> fzf#install()  }  }
-    Plug 'yuki-ycino/fzf-preview.vim', { 'branch': 'release', 'do': ':UpdateRemotePlugins'  }
-    Plug 'junegunn/fzf.vim'
-    " Start Screen
-    Plug 'mhinz/vim-startify'
-    Plug 'nvim-lua/popup.nvim'
-    Plug 'nvim-lua/plenary.nvim'
-    Plug 'nvim-telescope/telescope.nvim'
+   " Start Screen
+    Plug 'glepnir/dashboard-nvim'
+    Plug 'liuchengxu/vim-clap'
+    " Plug 'nvim-lua/popup.nvim'
+    " Plug 'nvim-lua/plenary.nvim'
+    " Plug 'nvim-telescope/telescope.nvim'
     " See what keys do like in emacs
     Plug 'liuchengxu/vim-which-key'
     " Snippets
@@ -72,19 +59,20 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Better tabline
     Plug 'romgrk/barbar.nvim'
     " Find and replace
-    Plug 'ChristianChiarulli/far.vim'
+    Plug 'brooth/far.vim'
     " Auto change html tags
     Plug 'AndrewRadev/tagalong.vim'
     " Smooth scroll
     Plug 'psliwka/vim-smoothie'
-    " " async tasks
+    " async tasks
     Plug 'skywind3000/asynctasks.vim'
     Plug 'skywind3000/asyncrun.vim'
     " Swap windows
     Plug 'wesQ3/vim-windowswap'
-   " Easily Create Gists
+    " FZF
+    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+    " Easily Create Gists
     Plug 'mattn/vim-gist'
-    Plug 'mattn/webapi-vim'
     " Colorizer
     Plug 'norcalli/nvim-colorizer.lua'
     Plug 'frazrepo/vim-rainbow'
@@ -96,14 +84,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'szw/vim-maximizer'
     " Live Server
     Plug  'turbio/bracey.vim', {'do': 'npm install --prefix server'}
-    " Ranger
-    Plug 'kevinhwang91/rnvimr', {'do': 'make sync'}
-    " Terminal
-    Plug 'voldikss/vim-floaterm'
-    " Markdown Preview
-    " Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & npm install'   }
-  endif
-
+    " Minimap
+    Plug 'wfxr/minimap.vim', {'do': ':!cargo install --locked code-minimap'}
 call plug#end()
 
 " Automatically install missing plugins on startup
