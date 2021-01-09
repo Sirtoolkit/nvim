@@ -123,7 +123,7 @@ gls.left[8] = {
 gls.left[9] = {
   DiagnosticError = {
     provider = 'DiagnosticError',
-    icon = '  ',
+    icon = '  ',
     highlight = {colors.red,colors.bg}
   }
 }
@@ -149,7 +149,7 @@ gls.left[12] = {
 gls.left[13] = {
   DiagnosticInfo = {
     provider = 'DiagnosticInfo',
-    icon = '   ',
+    icon = '   ',
     highlight = {colors.orange,colors.bg},
   }
 }

@@ -77,6 +77,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'neovim/nvim-lspconfig'
     " Live Server
     Plug  'turbio/bracey.vim', {'do': 'npm install --prefix server'}
+    " Rnvimr
+    Plug 'kevinhwang91/rnvimr'
 call plug#end()
 
 " Automatically install missing plugins on startup

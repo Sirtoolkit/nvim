@@ -38,6 +38,7 @@ let g:which_key_map['.'] = [ ':e $MYVIMRC'                                     ,
 let g:which_key_map['h'] = [ '<C-W>s'                                          , 'split below']
 let g:which_key_map['v'] = [ '<C-W>v'                                          , 'split right']
 let g:which_key_map['d'] = [ ':Bdelete'                                        , 'delete-buffer']
+let g:which_key_map['r'] = [ ':RnvimrToggle'                                   , 'ranger']
 
 " Group mappings
 
