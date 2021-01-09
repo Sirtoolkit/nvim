@@ -24,10 +24,6 @@ let g:which_key_map['?'] = 'search word'
 let g:which_key_use_floating_win = 0
 let g:which_key_max_size = 0
 
-" let g:which_key_position = 'botright'
-" let g:which_key_position = 'topleft'
-" let g:which_key_vertical = 1
-
 " Change the colors if you want
 
 " Hide status line
@@ -39,44 +35,19 @@ autocmd  FileType which_key set laststatus=0 noshowmode noruler
 " Single mappings
 let g:which_key_map['/'] = [ ':call Comment()'                                 , 'comment' ]
 let g:which_key_map['.'] = [ ':e $MYVIMRC'                                     , 'open init' ]
-let g:which_key_map['='] = [ '<C-W>='                                          , 'balance windows' ]
-let g:which_key_map['e'] = [ ':NERDTreeToggle'                                 , 'NERDTree' ]
 let g:which_key_map['h'] = [ '<C-W>s'                                          , 'split below']
-let g:which_key_map['n'] = [ ':let @/ = ""'                                    , 'no highlight' ]
-let g:which_key_map['p'] = [ ':Files'                                          , 'search files' ]
-let g:which_key_map['T'] = [ ':TSHighlightCapturesUnderCursor'                 , 'treesitter highlight' ]
 let g:which_key_map['v'] = [ '<C-W>v'                                          , 'split right']
-let g:which_key_map['m'] = [ ':MinimapToggle'                                  , 'Minimap']
-let g:which_key_map['W'] = [ ':call WindowSwap#EasyWindowSwap()'               , 'move window' ]
+let g:which_key_map['d'] = [ ':Bdelete'                                        , 'delete-buffer']
 
 " Group mappings
 
 " a is for actions
 let g:which_key_map.a = {
       \ 'name' : '+actions' ,
-      \ 'c' : [':ColorizerToggle'        , 'colorizer'],
       \ 'l' : [':Bracey'                 , 'start live server'],
       \ 'L' : [':BraceyStop'             , 'stop live server'],
       \ 'm' : [':MarkdownPreview'        , 'markdown preview'],
       \ 'M' : [':MarkdownPreviewStop'    , 'markdown preview stop'],
-      \ 's' : [':s/\%V\(.*\)\%V/"\1"/'   , 'surround'],
-      \ 'r' : [':set norelativenumber!'  , 'relative line nums'],
-      \ }
-
-" b is for buffer
-let g:which_key_map.b = {
-      \ 'name' : '+buffer' ,
-      \ '>' : [':BufferMoveNext'        , 'move next'],
-      \ '<' : [':BufferMovePrevious'    , 'move prev'],
-      \ 'b' : [':BufferPick'            , 'pick buffer'],
-      \ 'd' : [':Bdelete'               , 'delete-buffer'],
-      \ 'D' : [':BufferOrderByDirectory', 'order by directory'],
-      \ 'f' : ['bfirst'                 , 'first-buffer'],
-      \ 'l' : ['blast'                  , 'last buffer'],
-      \ 'L' : [':BufferOrderByLanguage' , 'order by language'],
-      \ 'n' : ['bnext'                  , 'next-buffer'],
-      \ 'p' : ['bprevious'              , 'previous-buffer'],
-      \ '?' : ['Buffers'                , 'fzf-buffer'],
       \ }
 
 " F is for find and replace
@@ -110,16 +81,9 @@ let g:which_key_map.k = {
       \ 'name' : '+task' ,
       \ 'c' : [':AsyncTask file-compile'      , 'compile file'],
       \ 'b' : [':AsyncTask project-build'     , 'build project'],
-      \ 'e' : [':AsyncTaskEdit'               , 'edit local tasks'],
-      \ 'f' : [':AsyncTaskFzf'                , 'find task'],
       \ 'g' : [':AsyncTaskEdit!'              , 'edit global tasks'],
-      \ 'h' : [':AsyncTaskList!'              , 'list hidden tasks'],
-      \ 'l' : [':CocList tasks'               , 'list tasks'],
-      \ 'm' : [':AsyncTaskMacro'              , 'macro help'],
-      \ 'o' : [':copen'                       , 'open task view'],
       \ 'r' : [':AsyncTask file-run'          , 'run file'],
       \ 'p' : [':AsyncTask project-run'       , 'run project'],
-      \ 'x' : [':cclose'                      , 'close task view'],
       \ }
 
 " s is for search
@@ -130,38 +94,32 @@ let g:which_key_map.s = {
       \ 'd' : [':CocCommand fzf-preview.DirectoryFiles' , 'directories'],
       \ 'f' : [':CocCommand fzf-preview.ProjectFiles'   , 'files'],
       \ 'g' : [':CocCommand fzf-preview.GitFiles'       , 'git files'],
-      \ 'G' : [':GFiles?'                               , 'modified git files'],
       \ 'm' : [':CocCommand fzf-preview.Marks'          , 'list marks'],
-      \ 'q' : [':CocCommand fzf-preview.QuickFix'       , 'quickfix list'],
-      \ 's' : [':CocList snippets'                      , 'snippets'],
-      \ 'c' : [':Clap colors'                           , 'colorScheme'],
-      \ 'z' : [':FZF'                                   , 'FZF'],
       \ }
  
 " g is for git
 let g:which_key_map.g = {
       \ 'name' : '+git' ,
-      \ 'a' : [':Git add .'                        , 'add all'],
-      \ 'A' : [':CocCommand fzf-preview.GitStatus' , 'actions'],
-      \ 'b' : [':Git blame'                        , 'blame'],
-      \ 'B' : [':GBrowse'                          , 'browse'],
-      \ 'c' : [':Git commit'                       , 'commit'],
-      \ 'd' : [':Git diff'                         , 'diff'],
-      \ 'D' : [':Gdiffsplit'                       , 'diff split'],
-      \ 'g' : [':Gstatus'                          , 'status'],
-      \ 'h' : [':GitGutterLineHighlightsToggle'    , 'highlight hunks'],
-      \ 'i' : [':Gist -b'                          , 'post gist'],
-      \ 'l' : [':Git log'                          , 'log'],
-      \ 'm' : [':GitMessenger'                      , 'message'],
-      \ 'p' : [':Git push'                         , 'push'],
-      \ 'P' : [':Git pull'                         , 'pull'],
-      \ 'r' : [':GRemove'                          , 'remove'],
-      \ 's' : ['<Plug>(GitGutterStageHunk)'        , 'stage hunk'],
-      \ 'S' : [':CocCommand fzf-preview.GitStatus' , 'status'],
-      \ 't' : [':GitGutterSignsToggle'             , 'toggle signs'],
-      \ 'u' : ['<Plug>(GitGutterUndoHunk)'         , 'undo hunk'],
-      \ 'v' : [':GV'                               , 'view commits'],
-      \ 'V' : [':GV!'                              , 'view buffer commits'],
+      \ 'a' : [':Git add .'                          , 'add all'],
+      \ 'b' : [':Git blame'                          , 'blame'],
+      \ 'B' : [':GBrowse'                            , 'browse'],
+      \ 'c' : [':Git commit'                         , 'commit'],
+      \ 'd' : [':Git diff'                           , 'diff'],
+      \ 'D' : [':Gdiffsplit'                         , 'diff split'],
+      \ 'g' : [':Gstatus'                            , 'status'],
+      \ 'h' : [':GitGutterLineHighlightsToggle'      , 'highlight hunks'],
+      \ 'i' : [':Gist -b'                            , 'post gist'],
+      \ 'l' : [':Git log'                            , 'log'],
+      \ 'L' : [':CocCommand fzf-preview.GitLogs'     , 'log fzf'],
+      \ 'p' : [':Git push'                           , 'push'],
+      \ 'P' : [':Git pull'                           , 'pull'],
+      \ 'm' : [':GitMessenger'                       , 'message'],
+      \ 'r' : [':GRemove'                            , 'remove'],
+      \ 'S' : [':CocCommand fzf-preview.GitStatus'   , 'status'],
+      \ 'n' : [':CocCommand fzf-preview.GitBranches' , 'branches'],
+      \ 'e' : [':CocCommand fzf-preview.GitReflogs'  , 'reflog'],
+      \ 'v' : [':GV'                                 , 'view commits'],
+      \ 'V' : [':GV!'                                , 'view buffer commits'],
       \ }
 
 let g:which_key_map.G = {
@@ -175,41 +133,5 @@ let g:which_key_map.G = {
       \ 'm' : [':Gist -m'                          , 'post gist all buffers'],
       \ 'p' : [':Gist -P'                          , 'post public gist '],
       \ 'P' : [':Gist -p'                          , 'post private gist '],
-      \ }
-
-" l is for language server protocol
-let g:which_key_map.l = {
-      \ 'name' : '+lsp' ,
-      \ '.' : [':CocConfig'                          , 'config'],
-      \ ';' : ['<Plug>(coc-refactor)'                , 'refactor'],
-      \ 'a' : ['<Plug>(coc-codeaction-selected)'     , 'selected action'],
-      \ 'b' : [':CocNext'                            , 'next action'],
-      \ 'B' : [':CocPrev'                            , 'prev action'],
-      \ 'c' : [':CocList commands'                   , 'commands'],
-      \ 'd' : ['<Plug>(coc-definition)'              , 'definition'],
-      \ 'D' : ['<Plug>(coc-declaration)'             , 'declaration'],
-      \ 'e' : [':CocList extensions'                 , 'extensions'],
-      \ 'f' : ['<Plug>(coc-format-selected)'         , 'format selected'],
-      \ 'F' : ['<Plug>(coc-format)'                  , 'format'],
-      \ 'h' : ['<Plug>(coc-float-hide)'              , 'hide'],
-      \ 'i' : ['<Plug>(coc-implementation)'          , 'implementation'],
-      \ 'I' : [':CocList diagnostics'                , 'diagnostics'],
-      \ 'j' : ['<Plug>(coc-float-jump)'              , 'float jump'],
-      \ 'l' : ['<Plug>(coc-codelens-action)'         , 'code lens'],
-      \ 'n' : ['<Plug>(coc-diagnostic-next)'         , 'next diagnostic'],
-      \ 'N' : ['<Plug>(coc-diagnostic-next-error)'   , 'next error'],
-      \ 'O' : [':CocList outline'                    , 'search outline'],
-      \ 'p' : ['<Plug>(coc-diagnostic-prev)'         , 'prev diagnostic'],
-      \ 'P' : ['<Plug>(coc-diagnostic-prev-error)'   , 'prev error'],
-      \ 'q' : ['<Plug>(coc-fix-current)'             , 'quickfix'],
-      \ 'r' : ['<Plug>(coc-references)'              , 'references'],
-      \ 'R' : ['<Plug>(coc-rename)'                  , 'rename'],
-      \ 's' : [':CocList -I symbols'                 , 'references'],
-      \ 'S' : [':CocList snippets'                   , 'snippets'],
-      \ 't' : ['<Plug>(coc-type-definition)'         , 'type definition'],
-      \ 'u' : [':CocListResume'                      , 'resume list'],
-      \ 'U' : [':CocUpdate'                          , 'update CoC'],
-      \ 'z' : [':CocDisable'                         , 'disable CoC'],
-      \ 'Z' : [':CocEnable'                          , 'enable CoC'],
       \ }
 call which_key#register('<Space>', "g:which_key_map")

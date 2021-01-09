@@ -17,12 +17,14 @@ source $HOME/.config/nvim/keys/mappings.vim
 
   " Themes
   source $HOME/.config/nvim/themes/themes.vim
-  source $HOME/.config/nvim/themes/airline.vim
+  source $HOME/.config/nvim/themes/galaxyline.vim
 
   " Plugin Configuration
   source $HOME/.config/nvim/keys/which-key.vim
   source $HOME/.config/nvim/plug-config/vim-commentary.vim
   luafile $HOME/.config/nvim/lua/treesitter.lua
+  luafile $HOME/.config/nvim/lua/plug-colorizer.lua
+  luafile $HOME/.config/nvim/lua/dev-icons.lua
   source $HOME/.config/nvim/plug-config/coc/coc.vim
   source $HOME/.config/nvim/plug-config/coc/coc-extensions.vim
   source $HOME/.config/nvim/plug-config/easymotion.vim
@@ -35,17 +37,10 @@ source $HOME/.config/nvim/keys/mappings.vim
   source $HOME/.config/nvim/plug-config/asynctask.vim
   source $HOME/.config/nvim/plug-config/window-swap.vim
   source $HOME/.config/nvim/plug-config/vim-lsp.vim
-  source $HOME/.config/nvim/plug-config/nerdtree.vim
-  source $HOME/.config/nvim/plug-config/dev-icons.vim
+  source $HOME/.config/nvim/plug-config/nvimtree.vim
   source $HOME/.config/nvim/plug-config/bracey.vim
   source $HOME/.config/nvim/plug-config/rainbow.vim
-  source $HOME/.config/nvim/plug-config/minimap.vim
-
-" Add paths to node and python here
-if !empty(glob("~/.config/nvim/paths.vim"))
-  source $HOME/.config/nvim/paths.vim
-endif
-
+  source $HOME/.config/nvim/plug-config/dashboard.vim
 " Better nav for omnicomplete TODO figure out why this is being overridden
 inoremap <expr> <c-j> ("\<C-n>")
 inoremap <expr> <c-k> ("\<C-p>")

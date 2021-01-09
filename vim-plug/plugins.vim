@@ -15,30 +15,28 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'RRethy/vim-illuminate'
     Plug 'easymotion/vim-easymotion'
     Plug 'machakann/vim-highlightedyank'
+    " Ident
+    " Plug 'glepnir/indent-guides.nvim'
     " Easymotion
     Plug 'easymotion/vim-easymotion'
     " Tree
-    Plug 'scrooloose/nerdtree'
-    Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+    Plug 'kyazdani42/nvim-tree.lua'
     " Surround
     Plug 'tpope/vim-surround'
     " Treesitter
     Plug 'nvim-treesitter/nvim-treesitter'
     " Cool Icons
     Plug 'kyazdani42/nvim-web-devicons'
-    Plug 'ryanoasis/vim-devicons'
     " Auto pairs for '(' '[' '{'
     Plug 'jiangmiao/auto-pairs'
     " Closetags
     Plug 'alvan/vim-closetag'
     " Themes
-    Plug 'joshdick/onedark.vim'
     Plug 'morhetz/gruvbox'
     " Intellisense
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     " Status Line
-    Plug 'vim-airline/vim-airline'
-    Plug 'vim-airline/vim-airline-themes'
+    Plug 'glepnir/galaxyline.nvim'
     " Git
     Plug 'airblade/vim-gitgutter'
     Plug 'tpope/vim-fugitive'
@@ -47,13 +45,10 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'rhysd/git-messenger.vim'
    " Start Screen
     Plug 'glepnir/dashboard-nvim'
-    Plug 'liuchengxu/vim-clap'
-    " Plug 'nvim-lua/popup.nvim'
-    " Plug 'nvim-lua/plenary.nvim'
-    " Plug 'nvim-telescope/telescope.nvim'
-    " See what keys do like in emacs
+   " See what keys do like in emacs
     Plug 'liuchengxu/vim-which-key'
     " Snippets
+    Plug 'sirver/ultisnips'
     Plug 'honza/vim-snippets'
     Plug 'mattn/emmet-vim'
     " Better tabline
@@ -62,8 +57,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'brooth/far.vim'
     " Auto change html tags
     Plug 'AndrewRadev/tagalong.vim'
-    " Smooth scroll
-    Plug 'psliwka/vim-smoothie'
     " async tasks
     Plug 'skywind3000/asynctasks.vim'
     Plug 'skywind3000/asyncrun.vim'
@@ -71,6 +64,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'wesQ3/vim-windowswap'
     " FZF
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+    " Clap
+    Plug 'liuchengxu/vim-clap'
     " Easily Create Gists
     Plug 'mattn/vim-gist'
     " Colorizer
@@ -79,13 +74,9 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Intuitive buffer closing
     Plug 'moll/vim-bbye'
     " Debugging
-    Plug 'prabirshrestha/vim-lsp'
-    Plug 'mattn/vim-lsp-settings'
-    Plug 'szw/vim-maximizer'
+    Plug 'neovim/nvim-lspconfig'
     " Live Server
     Plug  'turbio/bracey.vim', {'do': 'npm install --prefix server'}
-    " Minimap
-    Plug 'wfxr/minimap.vim', {'do': ':!cargo install --locked code-minimap'}
 call plug#end()
 
 " Automatically install missing plugins on startup
