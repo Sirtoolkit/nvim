@@ -16,7 +16,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'easymotion/vim-easymotion'
     Plug 'machakann/vim-highlightedyank'
     " Ident
-    " Plug 'glepnir/indent-guides.nvim'
+    Plug 'glepnir/indent-guides.nvim'
     " Easymotion
     Plug 'easymotion/vim-easymotion'
     " Tree
@@ -76,7 +76,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Debugging
     Plug 'neovim/nvim-lspconfig'
     " Live Server
-    Plug  'turbio/bracey.vim', {'do': 'npm install --prefix server'}
+    Plug  'turbio/bracey.vim' , {'do': 'npm install --prefix server'}
     " Rnvimr
     Plug 'kevinhwang91/rnvimr'
 call plug#end()
