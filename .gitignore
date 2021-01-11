@@ -1,0 +1,7 @@
+
+autoload/plugged/barbar.nvim
+autoload/plugged/dashboard-nvim
+autoload/plugged/git-messenger.vim
+autoload/plugged/nvim-colorizer.lua
+autoload/plugged/nvim-lspconfig
+autoload/plugged/tagalong.vim
