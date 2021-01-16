@@ -45,7 +45,7 @@ else
   xnoremap J :move '>+1<CR>gv-gv
 
   " Alternate way to save
-  nnoremap <silent> <C-s> :w<CR>
+  nnoremap <silent> <C-s> :w!<CR>
   " Alternate way to quit
   nnoremap <silent> <C-Q> :q!<CR>
   " Use control-c instead of escape

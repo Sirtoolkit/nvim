@@ -1,5 +1,3 @@
-" Leader Key Maps
-
 let @s = 'veS"'
 
 " Timeout let g:which_key_timeout = 100
@@ -17,7 +15,6 @@ let g:which_key_sep = '→'
 " set timeoutlen=100
 
 " Coc Search & refactor
-nnoremap <leader>? CocSearch <C-R>=expand("<cword>")<CR><CR>
 let g:which_key_map['?'] = 'search word'
 
 " Not a fan of floating windows for this
@@ -33,20 +30,28 @@ autocmd  FileType which_key set laststatus=0 noshowmode noruler
 
 
 " Single mappings
-let g:which_key_map['/'] = [ ':call Comment()'                                 , 'comment' ]
+let g:which_key_map['c'] = [ ':call Comment()'                                 , 'comment' ]
 let g:which_key_map['.'] = [ ':e $MYVIMRC'                                     , 'open init' ]
 let g:which_key_map['h'] = [ '<C-W>s'                                          , 'split below']
 let g:which_key_map['v'] = [ '<C-W>v'                                          , 'split right']
 let g:which_key_map['d'] = [ ':Bdelete'                                        , 'delete-buffer']
 let g:which_key_map['r'] = [ ':RnvimrToggle'                                   , 'ranger']
+" let g:which_key_map['u'] = [ ':lua vim.lsp.buf.code_action()'                  , 'code action']
+" let g:which_key_map['i'] = [ ':lua vim.lsp.buf.hover()'                        , 'hover']
+" let g:which_key_map['o'] = [ ':lua vim.lsp.buf.definition()'                   , 'definition']
+" let g:which_key_map['p'] = [ ':lua vim.lsp.buf.formatting()'                   , 'formatting']
+nmap <leader>u :lua vim.lsp.buf.code_action()<CR>
+nmap <leader>i :lua vim.lsp.buf.hover()<CR>
+nmap <leader>o :lua vim.lsp.buf.definition()<CR>
+nmap <leader>p :lua vim.lsp.buf.formatting()<CR>
 
 " Group mappings
 
 " a is for actions
 let g:which_key_map.a = {
       \ 'name' : '+actions' ,
-      \ 'l' : [':Bracey'                 , 'start live server'],
-      \ 'L' : [':BraceyStop'             , 'stop live server'],
+      \ 'b' : [':Bracey'                 , 'start live server'],
+      \ 's' : [':BraceyStop'             , 'stop live server'],
       \ 'm' : [':MarkdownPreview'        , 'markdown preview'],
       \ 'M' : [':MarkdownPreviewStop'    , 'markdown preview stop'],
       \ }
@@ -61,19 +66,13 @@ let g:which_key_map.F = {
 " f is for Flutter Commands 
 let g:which_key_map.f = {
       \ 'name' : 'Flutter' ,
-      \ 'r' : [':CocCommand flutter.run'             , 'Flutter run'],
-      \ 'C' : [':CocCommand flutter.create'          , 'Flutter Create'],
-      \ 'd' : [':CocCommand flutter.doctor'          , 'Flutter Doctor'],
-      \ 'p' : [':CocCommand flutter.pub.get'         , 'Flutter Pub Get'],
-      \ 'D' : [':CocCommand flutter.devices'         , 'Flutter Devices'],
-      \ 'e' : [':CocCommand flutter.emulators'       , 'Flutter Emulators'],
-      \ 'O' : [':CocCommand flutter.outline'         , 'Flutter Outline'],
-      \ 'q' : [':CocCommand flutter.dev.quit'        , 'Flutter Quit'],
-      \ 'H' : [':CocCommand flutter.dev.hotReload'   , 'Flutter Hot Reload'],
-      \ 'h' : [':CocCommand flutter.dev.hotRestart'  , 'Flutter Hot Restart'],
-      \ 's' : [':CocCommand flutter.dev.screenshot'  , 'Flutter Screenshot'],
-      \ 'o' : [':CocCommand flutter.dev.openDevLog'  , 'Flutter open Dev Log'],
-      \ 'c' : [':CocCommand flutter.dev.clearDevLog' , 'Flutter Clear Dev Log'],
+      \ 'r' : [':FlutterRun'                         , 'Flutter run'],
+      \ 'D' : [':FlutterDevices'                     , 'Flutter Devices'],
+      \ 'e' : [':FlutterEmulators'                   , 'Flutter Emulators'],
+      \ 'q' : [':FlutterQuit'                        , 'Flutter Quit'],
+      \ 'H' : [':FlutterHotReload'                   , 'Flutter Hot Reload'],
+      \ 'h' : [':FlutterHotRestart'                  , 'Flutter Hot Restart'],
+      \ 'o' : [':FlutterVisualDebug'                 , 'Flutter Visual Debug'],
       \ }
 
 
@@ -90,12 +89,12 @@ let g:which_key_map.k = {
 " s is for search
 let g:which_key_map.s = {
       \ 'name' : '+search' ,
-      \ 'b' : [':CocCommand fzf-preview.BufferLines'    , 'current buffer'],
-      \ 'B' : [':CocCommand fzf-preview.Buffers'        , 'open buffers'],
-      \ 'd' : [':CocCommand fzf-preview.DirectoryFiles' , 'directories'],
-      \ 'f' : [':CocCommand fzf-preview.ProjectFiles'   , 'files'],
-      \ 'g' : [':CocCommand fzf-preview.GitFiles'       , 'git files'],
-      \ 'm' : [':CocCommand fzf-preview.Marks'          , 'list marks'],
+      \ 'b' : [':FzfPreviewBufferLinesRpc'              , 'current buffer'],
+      \ 'B' : [':FzfPreviewBuffersRpc'                  , 'open buffers'],
+      \ 'd' : [':FzfPreviewDirectoryFilesRpc'           , 'directories'],
+      \ 'f' : [':FzfPreviewProjectFilesRpc'             , 'files'],
+      \ 'g' : [':FzfPreviewGitFilesRpc'                 , 'git files'],
+      \ 'm' : [':FzfPreviewMarksRpc'                    , 'list marks'],
       \ }
  
 " g is for git
@@ -111,14 +110,14 @@ let g:which_key_map.g = {
       \ 'h' : [':GitGutterLineHighlightsToggle'      , 'highlight hunks'],
       \ 'i' : [':Gist -b'                            , 'post gist'],
       \ 'l' : [':Git log'                            , 'log'],
-      \ 'L' : [':CocCommand fzf-preview.GitLogs'     , 'log fzf'],
+      \ 'L' : [':FzfPreviewGitLogsRpc'               , 'log fzf'],
       \ 'p' : [':Git push'                           , 'push'],
       \ 'P' : [':Git pull'                           , 'pull'],
       \ 'm' : [':GitMessenger'                       , 'message'],
       \ 'r' : [':GRemove'                            , 'remove'],
-      \ 'S' : [':CocCommand fzf-preview.GitStatus'   , 'status'],
-      \ 'n' : [':CocCommand fzf-preview.GitBranches' , 'branches'],
-      \ 'e' : [':CocCommand fzf-preview.GitReflogs'  , 'reflog'],
+      \ 'S' : [':FzfPreviewGitStatusRpc'             , 'status'],
+      \ 'n' : [':FzfPreviewGitBranchesRpc'           , 'branches'],
+      \ 'e' : [':FzfPreviewGitReflogsRpc'            , 'reflog'],
       \ 'v' : [':GV'                                 , 'view commits'],
       \ 'V' : [':GV!'                                , 'view buffer commits'],
       \ }
@@ -135,4 +134,5 @@ let g:which_key_map.G = {
       \ 'p' : [':Gist -P'                          , 'post public gist '],
       \ 'P' : [':Gist -p'                          , 'post private gist '],
       \ }
+
 call which_key#register('<Space>', "g:which_key_map")

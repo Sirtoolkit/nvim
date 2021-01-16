@@ -22,11 +22,6 @@ source $HOME/.config/nvim/keys/mappings.vim
   " Plugin Configuration
   source $HOME/.config/nvim/keys/which-key.vim
   source $HOME/.config/nvim/plug-config/vim-commentary.vim
-  luafile $HOME/.config/nvim/lua/treesitter.lua
-  luafile $HOME/.config/nvim/lua/plug-colorizer.lua
-  luafile $HOME/.config/nvim/lua/dev-icons.lua
-  source $HOME/.config/nvim/plug-config/coc/coc.vim
-  source $HOME/.config/nvim/plug-config/coc/coc-extensions.vim
   source $HOME/.config/nvim/plug-config/easymotion.vim
   source $HOME/.config/nvim/plug-config/gitgutter.vim
   source $HOME/.config/nvim/plug-config/git-messenger.vim
@@ -36,12 +31,20 @@ source $HOME/.config/nvim/keys/mappings.vim
   source $HOME/.config/nvim/plug-config/tagalong.vim
   source $HOME/.config/nvim/plug-config/asynctask.vim
   source $HOME/.config/nvim/plug-config/window-swap.vim
-  source $HOME/.config/nvim/plug-config/vim-lsp.vim
   source $HOME/.config/nvim/plug-config/nvimtree.vim
   source $HOME/.config/nvim/plug-config/bracey.vim
   source $HOME/.config/nvim/plug-config/rainbow.vim
   source $HOME/.config/nvim/plug-config/dashboard.vim
   source $HOME/.config/nvim/plug-config/rnvimr.vim
+  source $HOME/.config/nvim/plug-config/flutter.vim
+  source $HOME/.config/nvim/plug-config/neoformat.vim
+  source $HOME/.config/nvim/plug-config/lspconfig.vim
+  source $HOME/.config/nvim/plug-config/dbui.vim
+  luafile $HOME/.config/nvim/lua/treesitter.lua
+  luafile $HOME/.config/nvim/lua/plug-colorizer.lua
+  luafile $HOME/.config/nvim/lua/dev-icons.lua
+  luafile $HOME/.config/nvim/lua/flutter.lua
+ 
 " Better nav for omnicomplete TODO figure out why this is being overridden
 inoremap <expr> <c-j> ("\<C-n>")
 inoremap <expr> <c-k> ("\<C-p>")

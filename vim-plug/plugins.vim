@@ -2,8 +2,7 @@
 if empty(glob('~/.config/nvim/autoload/plug.vim'))
   silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  "autocmd VimEnter * PlugInstall
-  autocmd VimEnter * PlugInstall | source $MYVIMRC
+  "autocmd VimEnter * PlugInstall autocmd VimEnter * PlugInstall | source $MYVIMRC
 endif
 call plug#begin('~/.config/nvim/autoload/plugged')
 
@@ -33,8 +32,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'alvan/vim-closetag'
     " Themes
     Plug 'morhetz/gruvbox'
-    " Intellisense
-    Plug 'neoclide/coc.nvim', {'branch': 'release'}
     " Status Line
     Plug 'glepnir/galaxyline.nvim'
     " Git
@@ -47,11 +44,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'glepnir/dashboard-nvim'
    " See what keys do like in emacs
     Plug 'liuchengxu/vim-which-key'
-    " Snippets
-    Plug 'sirver/ultisnips'
-    Plug 'honza/vim-snippets'
-    Plug 'mattn/emmet-vim'
-    " Better tabline
+   " Better tabline
     Plug 'romgrk/barbar.nvim'
     " Find and replace
     Plug 'brooth/far.vim'
@@ -64,6 +57,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'wesQ3/vim-windowswap'
     " FZF
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+    Plug 'yuki-ycino/fzf-preview.vim', { 'branch': 'release/rpc' }
     " Clap
     Plug 'liuchengxu/vim-clap'
     " Easily Create Gists
@@ -75,10 +69,28 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'moll/vim-bbye'
     " Debugging
     Plug 'neovim/nvim-lspconfig'
+    Plug 'nvim-lua/completion-nvim'
+    Plug 'RishabhRD/popfix'
+    Plug 'RishabhRD/nvim-lsputils'
+    " Snippets
+    Plug 'sirver/ultisnips'
+    Plug 'honza/vim-snippets'
+    Plug 'mattn/emmet-vim'
+    " DB
+    Plug 'tpope/vim-dadbod'
+    Plug 'kristijanhusak/vim-dadbod-ui'
+    Plug 'kristijanhusak/vim-dadbod-completion'
+    " Flutter
+    Plug 'akinsho/flutter-tools.nvim'
+    Plug 'dart-lang/dart-vim-plugin'
+    Plug 'thosakwe/vim-flutter'
+    " Format
+    Plug 'sbdchd/neoformat'
     " Live Server
     Plug  'turbio/bracey.vim' , {'do': 'npm install --prefix server'}
     " Rnvimr
     Plug 'kevinhwang91/rnvimr'
+
 call plug#end()
 
 " Automatically install missing plugins on startup

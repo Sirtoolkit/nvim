@@ -42,7 +42,6 @@ let g:nvim_tree_bindings = {
     \ 'paste':           'p',
     \ 'prev_git_item':   '[c',
     \ 'next_git_item':   ']c',
-    \ 'revealed':          'i',
     \ }
 
 " Disable default mappings by plugin
@@ -75,4 +74,4 @@ nnoremap <C-t> :!thunar .<CR>
 set termguicolors " this variable must be enabled for colors to be applied properly
 
 " a list of groups can be found at `:help nvim_tree_highlight`
-highlight NvimTreeFolderIcon guifg='#b8bb26'
+highlight NvimTreeFolderIcon guifg='#8EC07C'
