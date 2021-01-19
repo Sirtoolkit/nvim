@@ -66,13 +66,15 @@ let g:which_key_map.F = {
 " f is for Flutter Commands 
 let g:which_key_map.f = {
       \ 'name' : 'Flutter' ,
-      \ 'r' : [':FlutterRun'                         , 'Flutter run'],
-      \ 'D' : [':FlutterDevices'                     , 'Flutter Devices'],
-      \ 'e' : [':FlutterEmulators'                   , 'Flutter Emulators'],
-      \ 'q' : [':FlutterQuit'                        , 'Flutter Quit'],
-      \ 'H' : [':FlutterHotReload'                   , 'Flutter Hot Reload'],
-      \ 'h' : [':FlutterHotRestart'                  , 'Flutter Hot Restart'],
-      \ 'o' : [':FlutterVisualDebug'                 , 'Flutter Visual Debug'],
+      \ 'r' : [':FlutterRun'                         , 'flutter run'],
+      \ 'D' : [':FlutterDevices'                     , 'flutter devices'],
+      \ 'e' : [':FlutterEmulators'                   , 'flutter emulators'],
+      \ 'p' : [':FlutterPubGet'                      , 'flutter pub get'],
+      \ 'q' : [':FlutterQuit'                        , 'flutter quit'],
+      \ 'H' : [':FlutterReload'                      , 'flutter hot reload'],
+      \ 'h' : [':FlutterRestart'                     , 'flutter hot restart'],
+      \ 'o' : [':FlutterDevLog'                      , 'flutter visual debug'],
+      \ 'O' : [':FlutterOutline'                     , 'flutter Outline'],
       \ }
 
 

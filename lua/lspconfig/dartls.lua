@@ -1,15 +1,17 @@
 local util = require 'lspconfig/util'
 local configs = require 'lspconfig/configs'
-
+local labels = require "lspconfig/labels"
 local server_name = "dartls"
 local bin_name = "dart"
+
+local options = configs.options or {}
 
 local find_dart_sdk_root_path = function()
   if vim.fn["executable"]("flutter") == 1 then
     local flutter_path = vim.fn["resolve"](vim.fn["exepath"]("flutter"))
     local flutter_bin = vim.fn["fnamemodify"](flutter_path, ":h")
     -- return flutter_bin.."/cache/dart-sdk/bin/dart"
-    return "/home/sirpicsa/snap/flutter/common/flutter/bin/cache/dart-sdk/bin/dart"
+    return os.getenv("HOME") .. "/snap/flutter/common/flutter/bin/cache/dart-sdk/bin/dart"
   elseif vim.fn["executable"]("dart") == 1 then
     return vim.fn["resolve"](vim.fn["exepath"]("dart"))
   else
@@ -26,7 +28,7 @@ local analysis_server_snapshot_path = function()
   end
 
   -- return snapshot
-  return "/home/sirpicsa/snap/flutter/common/flutter/bin/cache/dart-sdk/bin/snapshots/analysis_server.dart.snapshot"
+  return os.getenv("HOME") .. "/snap/flutter/common/flutter/bin/cache/dart-sdk/bin/snapshots/analysis_server.dart.snapshot"
 end
 
 configs[server_name] = {
@@ -34,14 +36,18 @@ configs[server_name] = {
     cmd = {bin_name, analysis_server_snapshot_path(), "--lsp"};
     filetypes = {"dart"};
     root_dir = util.root_pattern("pubspec.yaml");
+    flags = {allow_incremental_sync = true},
     init_options = {
-      onlyAnalyzeProjectsWithOpenFiles = false,
-      suggestFromUnimportedLibraries = true,
-      closingLabels = false,
-      outline = false,
-      flutterOutline = false
-    };
+      closingLabels = true,
+      outline = true,
+      flutterOutline = true
+    },
+    handlers = {
+      ["dart/textDocument/publishClosingLabels"] = labels.closing_tags(options.closing_tags),
+      -- ["dart/textDocument/publishOutline"] = outline.document_outline(options.outline)
+    }
   };
+
   docs = {
     package_json = "https://raw.githubusercontent.com/Dart-Code/Dart-Code/master/package.json";
     description = [[
@@ -53,4 +59,3 @@ Language server for dart.
     };
   };
 };
--- vim:et ts=2 sw=2

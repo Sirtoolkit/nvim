@@ -43,7 +43,7 @@ source $HOME/.config/nvim/keys/mappings.vim
   luafile $HOME/.config/nvim/lua/treesitter.lua
   luafile $HOME/.config/nvim/lua/plug-colorizer.lua
   luafile $HOME/.config/nvim/lua/dev-icons.lua
-  luafile $HOME/.config/nvim/lua/flutter.lua
+  " luafile $HOME/.config/nvim/lua/flutter.lua
  
 " Better nav for omnicomplete TODO figure out why this is being overridden
 inoremap <expr> <c-j> ("\<C-n>")
