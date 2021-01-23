@@ -54,3 +54,5 @@ exe 'hi default BufferInactiveTarget   guifg=red gui=bold guibg=' . bg_inactive
 
 " For the shadow in buffer-picking mode
 hi default BufferShadow guifg=#000000 guibg=#000000
+set termguicolors
+" In your init.{vim/lua}

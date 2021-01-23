@@ -12,5 +12,5 @@ augroup NeoformatAutoFormat
                                                               \--print-width\ 80\
                                                               \--single-quote\
                                                               \--trailing-comma\ es5
-      autocmd BufWritePre *.js,*.jsx Neoformat
+autocmd BufWritePre *.js Neoformat
 augroup END

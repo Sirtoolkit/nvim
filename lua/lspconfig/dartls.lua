@@ -1,10 +1,9 @@
 local util = require 'lspconfig/util'
 local configs = require 'lspconfig/configs'
 local labels = require "lspconfig/labels"
+local outline = require "lspconfig/outline"
 local server_name = "dartls"
 local bin_name = "dart"
-
-local options = configs.options or {}
 
 local find_dart_sdk_root_path = function()
   if vim.fn["executable"]("flutter") == 1 then
@@ -43,8 +42,8 @@ configs[server_name] = {
       flutterOutline = true
     },
     handlers = {
-      ["dart/textDocument/publishClosingLabels"] = labels.closing_tags(options.closing_tags),
-      -- ["dart/textDocument/publishOutline"] = outline.document_outline(options.outline)
+       ["dart/textDocument/publishClosingLabels"] = labels.closing_tags(),
+       ["dart/textDocument/publishOutline"] = outline.document_outline()
     }
   };
 
