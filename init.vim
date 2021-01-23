@@ -4,7 +4,6 @@
 " _/ // / / / / /__| |/ / / / / / / /
 "/___/_/ /_/_/\__(_)___/_/_/ /_/ /_/
 
-
 " General Settings
 source $HOME/.config/nvim/general/settings.vim
 source $HOME/.config/nvim/general/functions.vim
@@ -35,7 +34,6 @@ source $HOME/.config/nvim/keys/mappings.vim
   source $HOME/.config/nvim/plug-config/rainbow.vim
   source $HOME/.config/nvim/plug-config/dashboard.vim
   source $HOME/.config/nvim/plug-config/rnvimr.vim
-  source $HOME/.config/nvim/plug-config/flutter.vim
   source $HOME/.config/nvim/plug-config/neoformat.vim
   source $HOME/.config/nvim/plug-config/lspconfig.vim
   source $HOME/.config/nvim/plug-config/dbui.vim

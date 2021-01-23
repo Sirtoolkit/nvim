@@ -69,6 +69,7 @@ let g:which_key_map.f = {
       \ 'r' : [':FlutterRun'                         , 'flutter run'],
       \ 'D' : [':FlutterDevices'                     , 'flutter devices'],
       \ 'e' : [':FlutterEmulators'                   , 'flutter emulators'],
+      \ 'a' : [':AddDependency'                      , 'flutter dependency'],
       \ 'p' : [':FlutterPubGet'                      , 'flutter pub get'],
       \ 'q' : [':FlutterQuit'                        , 'flutter quit'],
       \ 'H' : [':FlutterReload'                      , 'flutter hot reload'],
