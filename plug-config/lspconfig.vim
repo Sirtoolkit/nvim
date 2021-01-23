@@ -18,8 +18,7 @@ lua <<EOF
         vim.lsp.callbacks['textDocument/references'] = require'lsputil.locations'.references_handler
         vim.lsp.callbacks['textDocument/definition'] = require'lsputil.locations'.definition_handler
         vim.lsp.callbacks['textDocument/declaration'] = require'lsputil.locations'.declaration_handler
-        vim.lsp.callbacks['textDocument/typeDefinition'] = require'lsputil.locations'.typeDefinition_handler
-        vim.lsp.callbacks['textDocument/implementation'] = require'lsputil.locations'.implementation_handler
+        vim.lsp.callbacks['textDocument/typeDefinition'] = require'lsputil.locations'.typeDefinition_handler vim.lsp.callbacks['textDocument/implementation'] = require'lsputil.locations'.implementation_handler
         vim.lsp.callbacks['textDocument/documentSymbol'] = require'lsputil.symbols'.document_handler
         vim.lsp.callbacks['workspace/symbol'] = require'lsputil.symbols'.workspace_handler
 EOF
@@ -28,10 +27,10 @@ EOF
         inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
         inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
-        " Set completeopt to have a better completion experience
+        " " Set completeopt to have a better completion experience
         set completeopt=menuone,noinsert,noselect
 
-        " Avoid showing message extra message when using completion
+        " " Avoid showing message extra message when using completion
         set shortmess+=c
         imap <silent> <c-space> <Plug>(completion_trigger)
         imap <tab> <Plug>(completion_smart_tab)
@@ -46,4 +45,5 @@ EOF
           autocmd BufEnter * let g:completion_trigger_character = ['.']
           autocmd BufEnter *.c,*.cpp,*.dart,*.js,*.jsx let g:completion_trigger_character = ['.', '::']
         augroup end
-        let g:UltiSnipsSnippetDirectories=['~/.config/nvim/.vim/UltiSnips']
+       let g:UltiSnipsSnippetDirectories=['~/.config/nvim/.vim/UltiSnips']
+       let g:deoplete#enable_at_startup = 1

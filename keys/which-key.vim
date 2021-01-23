@@ -89,17 +89,7 @@ let g:which_key_map.k = {
       \ 'p' : [':AsyncTask project-run'       , 'run project'],
       \ }
 
-" s is for search
-let g:which_key_map.s = {
-      \ 'name' : '+search' ,
-      \ 'b' : [':FzfPreviewBufferLinesRpc'              , 'current buffer'],
-      \ 'B' : [':FzfPreviewBuffersRpc'                  , 'open buffers'],
-      \ 'd' : [':FzfPreviewDirectoryFilesRpc'           , 'directories'],
-      \ 'f' : [':FzfPreviewProjectFilesRpc'             , 'files'],
-      \ 'g' : [':FzfPreviewGitFilesRpc'                 , 'git files'],
-      \ 'm' : [':FzfPreviewMarksRpc'                    , 'list marks'],
-      \ }
- 
+
 " g is for git
 let g:which_key_map.g = {
       \ 'name' : '+git' ,
@@ -118,7 +108,7 @@ let g:which_key_map.g = {
       \ 'P' : [':Git pull'                           , 'pull'],
       \ 'm' : [':GitMessenger'                       , 'message'],
       \ 'r' : [':GRemove'                            , 'remove'],
-      \ 'S' : [':FzfPreviewGitStatusRpc'             , 'status'],
+      \ 's' : [':FzfPreviewGitStatusRpc'             , 'status'],
       \ 'n' : [':FzfPreviewGitBranchesRpc'           , 'branches'],
       \ 'e' : [':FzfPreviewGitReflogsRpc'            , 'reflog'],
       \ 'v' : [':GV'                                 , 'view commits'],

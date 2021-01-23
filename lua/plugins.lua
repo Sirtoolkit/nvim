@@ -1,6 +1,5 @@
 local execute = vim.api.nvim_command
 local fn = vim.fn
-
 local install_path = fn.stdpath('data')..'/site/pack/packer/opt/packer.nvim'
 
 if fn.empty(fn.glob(install_path)) > 0 then
@@ -60,8 +59,9 @@ use 'skywind3000/asynctasks.vim'
 use 'skywind3000/asyncrun.vim'
 -- Swap windows
 use 'wesQ3/vim-windowswap'
--- Telescope
-use {'nvim-lua/telescope.nvim', requires = {'nvim-lua/popup.nvim', 'nvim-lua/plenary.nvim'}}
+-- FZF 
+ use {'junegunn/fzf',run='-> fzf#install()'} 
+ use {'yuki-yano/fzf-preview.vim',branch='release/rpc'}
 -- Clap
 use 'liuchengxu/vim-clap'
 -- Easily Create Gists
@@ -79,7 +79,7 @@ use 'RishabhRD/nvim-lsputils'
 -- Snippets
 use 'sirver/ultisnips'
 use 'honza/vim-snippets'
-use 'mattn/emmet-vim'
+use 'Shougo/deoplete.nvim'
 -- DB
 use 'tpope/vim-dadbod'
 use 'kristijanhusak/vim-dadbod-ui'
@@ -99,6 +99,6 @@ use 'romainl/vim-cool'
 use 'wellle/targets.vim'
 -- Wrapping/delimiters
 use {'machakann/vim-sandwich', {'andymass/vim-matchup', event = 'VimEnter *'}}
-
-
+-- Test
+use 'vim-test/vim-test'
 end)
