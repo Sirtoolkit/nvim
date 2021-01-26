@@ -78,6 +78,15 @@ let g:which_key_map.f = {
       \ 'O' : [':FlutterOutline'                     , 'flutter Outline'],
       \ }
 
+" t is for Tests
+let g:which_key_map.t = {
+      \ 'name' : 'Test' ,
+      \ 'f' : [':TestFile'       , 'test file'],
+      \ 'l' : [':TestLast'       , 'test last'],
+      \ 'n' : [':TestNearest'    , 'test nearest'],
+      \ 's' : [':TestSuite'      , 'test suite'],
+      \ 'v' : [':TestVisit'      , 'test visit'],
+      \ }
 
 " k is for task
 let g:which_key_map.k = {

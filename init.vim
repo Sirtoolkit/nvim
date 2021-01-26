@@ -37,6 +37,7 @@ source $HOME/.config/nvim/keys/mappings.vim
   source $HOME/.config/nvim/plug-config/neoformat.vim
   source $HOME/.config/nvim/plug-config/lspconfig.vim
   source $HOME/.config/nvim/plug-config/dbui.vim
+  source $HOME/.config/nvim/plug-config/multicursor.vim
   luafile $HOME/.config/nvim/lua/treesitter.lua
   luafile $HOME/.config/nvim/lua/plug-colorizer.lua
   luafile $HOME/.config/nvim/lua/dev-icons.lua

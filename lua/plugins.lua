@@ -8,8 +8,7 @@ if fn.empty(fn.glob(install_path)) > 0 then
 end
 
 vim.cmd [[packadd packer.nvim]]
-return require('packer').startup(function()
-  use {'wbthomason/packer.nvim', opt = true}
+return require('packer').startup(function() use {'wbthomason/packer.nvim', opt = true}
 -- Better Comments
 use 'tpope/vim-commentary'
 -- Repeat stuff
@@ -54,6 +53,8 @@ use 'romgrk/barbar.nvim'
 use 'brooth/far.vim'
 -- Auto change html tags
 use 'AndrewRadev/tagalong.vim'
+-- MultiCursor
+use 'terryma/vim-multiple-cursors'
 -- async tasks
 use 'skywind3000/asynctasks.vim'
 use 'skywind3000/asyncrun.vim'
@@ -79,7 +80,8 @@ use 'RishabhRD/nvim-lsputils'
 -- Snippets
 use 'sirver/ultisnips'
 use 'honza/vim-snippets'
-use 'Shougo/deoplete.nvim'
+use 'jvanja/vim-bootstrap4-snippets'
+use 'mlaursen/vim-react-snippets'
 -- DB
 use 'tpope/vim-dadbod'
 use 'kristijanhusak/vim-dadbod-ui'

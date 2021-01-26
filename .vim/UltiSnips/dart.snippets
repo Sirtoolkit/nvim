@@ -26,6 +26,14 @@ snippet im "Import" b
 import 'package:$1/${2:$1}.dart';
 endsnippet
 
+snippet importM "Import flutter material package" b
+import 'package:flutter/material.dart';
+endsnippet
+
+snippet importC "Import Flutter Cupertino package" b
+import 'package:flutter/cupertino.dart';
+endsnippet
+
 snippet for "For-in loop" b
 for(var $1 in ${2:$1}) {
 	$0
@@ -97,9 +105,19 @@ Map<String,dynamic> _map={};
 endsnippet
 
 pre_expand "ensure_import('dart:async', snip)"
-snippet gets "Stream field with a controller" b
-Stream<${2:void}> get ${1} => ${3:$4.stream;
-final ${4:_$1} = StreamController<$2>();}
+snippet strm "Stream field with a controller" b
+   Stream<${1:type}> get ${2:name} => _${2:name}Controller.stream;
+   final _${2:name}Controller = StreamController<${1:type}>();
+endsnippet
+
+snippet snk "A Sink is the input of a stream." b
+   Sink<${1:type}> get ${2:name} => _${2:name}Controller.sink;,
+   final _${2:name}Controller = StreamController<${1:type}>();
+endsnippet
+
+snippet subj "A BehaviorSubject is also a broadcast StreamController which returns an Observable rather than a Stream." b
+   Stream<${1:type}> get ${2:name} => _${2:name}Subject.stream;,
+   final _${2:name}Subject = BehaviorSubject<${1:type}>();
 endsnippet
 
 snippet m "Anonymous method" w
@@ -135,7 +153,7 @@ Future<$1> $2($3) async => $0;
 endsnippet
 
 priority 1
-snippet stless "StatelessWidget" b
+snippet statelessW "StatelessWidget" b
 class $1 extends StatelessWidget {
 
   $1({Key key}): super(key: key);
@@ -150,7 +168,7 @@ class $1 extends StatelessWidget {
 }
 endsnippet
 
-snippet stful "StatefulWidget" b
+snippet statefulW "StatefulWidget" b
 class $1 extends StatefulWidget {
   $1({Key key}) : super(key: key);
   static  final String routeName="";
@@ -171,26 +189,277 @@ class _$1State extends State<$1> {
 }
 endsnippet
 
-snippet app "My App , MaterialApp" b
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-       primarySwatch: Colors.blue,
-        selectedRowColor:Colors.yellow, 
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
-      home: MyHomePage(),
-    );
-  }
-}
+snippet mateapp "Create a MaterialApp" b
+     import 'package:flutter/material.dart';
+             
+            void main() => runApp(MyApp());
+             
+            class MyApp extends StatelessWidget {
+              @override
+              Widget build(BuildContext context) {
+                return MaterialApp(
+                  title: 'Material App',
+                  home: Scaffold(
+                    appBar: AppBar(
+                      title: Text('Material App Bar'),
+                    ),
+                    body: Center(
+                      child: Container(
+                        child: Text('Hello World'),
+                      ),
+                    ),
+                  ),
+                );
+              }
+            }
+endsnippet
+
+snippet cupeapp "Create a CupertinoApp" b
+     import 'package:flutter/cupertino.dart';        
+
+         void main() => runApp(MyApp());
+             
+            class MyApp extends StatelessWidget {
+              @override
+              Widget build(BuildContext context) {
+                return CupertinoApp(
+                  title: 'Cupertino App',
+                  home: CupertinoPageScaffold(
+                    navigationBar: CupertinoNavigationBar(
+                      middle: Text('Cupertino App Bar'),
+                    ),
+                    child: Center(
+                      child: Container(
+                        child: Text('Hello World'),
+                      ),
+                    ),
+                  ),
+                );
+              }
+            }        
 endsnippet
 
 snippet build "Widget Build" w 
 @override
 Widget build(BuildContext context) {
-    return $1;
+    return $0;
   }
+endsnippet
+
+snippet customPainter "Used for creating custom paint" w 
+     class $0Painter extends CustomPainter {
+            
+              @override,
+              void paint(Canvas canvas, Size size) {
+              }
+            
+              @override,
+              bool shouldRepaint(${0:name}Painter oldDelegate) => false;
+            
+              @override,
+              bool shouldRebuildSemantics(${0:name}Painter oldDelegate) => false;
+            }
+endsnippet
+
+snippet customClipper "Used for creating custom shapes" w 
+            class $0Clipper extends CustomClipper<Path> {
+            
+              @override,
+              Path getClip(Size size) {
+              }
+            
+              @override,
+              bool shouldReclip(CustomClipper<Path> oldClipper) => false;
+            }
+endsnippet
+
+snippet initS "Called when this object is inserted into the tree." w 
+            @override  	
+            void initState() { 
+              super.initState();
+              $0
+            }
+endsnippet
+
+snippet initS "Called when this object is inserted into the tree." w 
+            @override  	
+            void initState() { 
+              super.initState();
+              $0
+            }
+endsnippet
+
+snippet dis "Called when this object is removed from the tree permanently." w 
+            @override
+            void dispose(){
+              $0
+              super.dispose();
+            } 
+endsnippet
+
+
+snippet inheritedW "Class used to propagate information down the widget tree" w 
+class ${1:Name} extends InheritedWidget {
+              ${1:Name}({Key key, this.child}) : super(key: key, child: child);
+            
+              final Widget child;
+            
+              static ${1:Name} of(BuildContext context) {
+                return context.dependOnInheritedWidgetOfExactType<${1:Name}>();
+              }
+            
+              @override,
+              bool updateShouldNotify(${1:Name} oldWidget) {
+                return ${2:true};
+              }
+            }
+endsnippet
+
+snippet reassemble "Called whenever the application is reassembled during debugging, for example during hot reload." w 
+            @override
+            void reassemble(){
+              super.reassemble();
+              ${0:}
+            }
+endsnippet
+
+snippet didChangeD "Called when a dependency of this State object changes" w 
+            @override
+            void didChangeDependencies() {
+              super.didChangeDependencies();
+              ${0:}
+            }
+endsnippet
+
+snippet didUpdateW "Called whenever the widget configuration changes." w 
+            @override
+            void didUpdateWidget (${1:Type} ${2:oldWidget}) {
+              super.didUpdateWidget(${2:oldWidget});
+              ${0:}
+            }
+endsnippet
+
+snippet listViewB "Creates a scrollable, linear array of widgets that are created on demand." w 
+            ListView.builder(
+              itemCount: ${1:1},
+              itemBuilder: (BuildContext context, int index) {
+              return ${2:};
+             },
+            ),
+endsnippet
+
+snippet listViewS "Creates a fixed-length scrollable linear array of list 'items' separated by list item 'separators'." w 
+   ListView.separated(
+              itemCount: ${1:1},
+              separatorBuilder: (BuildContext context, int index) {
+              return ${2:};
+             },
+              itemBuilder: (BuildContext context, int index) {
+              return ${3:};
+             },
+            ),
+endsnippet
+
+snippet customScrollV "Creates a `ScrollView` that creates custom scroll effects using slivers. If the `primary` argument is true, the `controller` must be null." w 
+            CustomScrollView(
+              slivers: <Widget>[
+              ${0:}
+              ],
+            ),
+endsnippet
+
+snippet singleChildSV "Creates a scroll view with a single child" w 
+            SingleChildScrollView(
+              controller: ${1:controller,}
+              child: Column(
+                ${0:}
+              ),
+            ),
+endsnippet
+
+
+
+snippet streamBldr "Creates a new `StreamBuilder` that builds itself based on the latest snapshot of interaction with the specified `stream`" w 
+            StreamBuilder(
+              stream: ${1:stream},
+              initialData: ${2:initialData},
+              builder: (BuildContext context, AsyncSnapshot snapshot) {
+                return Container(
+                  child: ${3:child},
+                );
+              },
+            ),
+endsnippet
+
+
+
+snippet animatedBldr "Creates an Animated Builder. The widget specified to `child` is passed to the `builder` " w 
+            AnimatedBuilder(
+              animation: ${1:animation},
+              child: ${2:child},
+              builder: (BuildContext context, Widget child) {
+                return ${3:};
+              },
+            ), 
+endsnippet
+
+
+snippet statefulBldr "Creates a widget that both has state and delegates its build to a callback. Useful for rebuilding specific sections of the widget tree." w 
+          StatefulBuilder(
+              builder: (BuildContext context, setState) {
+                return ${0:};
+              },
+            ), 
+endsnippet
+
+snippet orientationBldr "Creates a builder which allows for the orientation of the device to be specified and referenced" w 
+             OrientationBuilder(
+              builder: (BuildContext context, Orientation orientation) {
+                return Container(
+                  child: ${3:child},
+                );
+              },
+            ), 
+endsnippet
+
+
+snippet layoutBldr "Similar to the Builder widget except that the framework calls the builder function at layout time and provides the parent widget's constraints." w 
+            LayoutBuilder(
+              builder: (BuildContext context, BoxConstraints constraints) {
+                return ${0:};
+              },
+            ),
+endsnippet
+
+snippet futureBldr "Creates a Future Builder. This builds itself based on the latest snapshot of interaction with a Future." w 
+             FutureBuilder(
+              future: ${1:Future},
+              initialData: ${2:InitialData},
+              builder: (BuildContext context, AsyncSnapshot snapshot) {
+                return ${3:};
+              },
+            ), 
+endsnippet
+
+snippet debugP "Prints a message to the console, which you can access using the flutter tool's `logs` command (flutter logs)." w 
+  debugPrint(${1:statement});
+endsnippet
+
+snippet importFT "Import flutter_test package" w 
+import 'package:flutter_test/flutter_test.dart';
+endsnippet
+
+snippet  f-test "Create a test function" w 
+            test(
+              ${1:test description},
+              () {},
+            );
+endsnippet
+
+
+snippet widgetTest "Create a testWidgets function" w 
+            testWidgets(
+               ${1:test description},
+               (WidgetTester tester) async {},
+            );
 endsnippet
