@@ -1,7 +1,6 @@
 local util = require 'lspconfig/util'
 local configs = require 'lspconfig/configs'
 local labels = require "lspconfig/labels"
-local outline = require "lspconfig/outline"
 local server_name = "dartls"
 local bin_name = "dart"
 
@@ -43,7 +42,6 @@ configs[server_name] = {
     },
     handlers = {
        ["dart/textDocument/publishClosingLabels"] = labels.closing_tags(),
-       ["dart/textDocument/publishOutline"] = outline.document_outline()
     }
   };
 
