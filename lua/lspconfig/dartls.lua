@@ -8,7 +8,6 @@ local find_dart_sdk_root_path = function()
   if vim.fn["executable"]("flutter") == 1 then
     local flutter_path = vim.fn["resolve"](vim.fn["exepath"]("flutter"))
     local flutter_bin = vim.fn["fnamemodify"](flutter_path, ":h")
-    -- return flutter_bin.."/cache/dart-sdk/bin/dart"
     return os.getenv("HOME") .. "/snap/flutter/common/flutter/bin/cache/dart-sdk/bin/dart"
   elseif vim.fn["executable"]("dart") == 1 then
     return vim.fn["resolve"](vim.fn["exepath"]("dart"))
@@ -25,7 +24,6 @@ local analysis_server_snapshot_path = function()
     snapshot = snapshot:gsub("/", "\\")
   end
 
-  -- return snapshot
   return os.getenv("HOME") .. "/snap/flutter/common/flutter/bin/cache/dart-sdk/bin/snapshots/analysis_server.dart.snapshot"
 end
 

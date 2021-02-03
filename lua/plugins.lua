@@ -75,13 +75,17 @@ use 'moll/vim-bbye'
 -- Debugging
 use 'neovim/nvim-lspconfig'
 use 'nvim-lua/completion-nvim'
-use 'RishabhRD/popfix'
-use 'RishabhRD/nvim-lsputils'
+use 'glepnir/lspsaga.nvim'
 -- Snippets
-use 'sirver/ultisnips'
+use 'SirVer/ultisnips'
 use 'honza/vim-snippets'
-use 'jvanja/vim-bootstrap4-snippets'
-use 'mlaursen/vim-react-snippets'
+
+use 'hrsh7th/vim-vsnip'
+use 'hrsh7th/vim-vsnip-integ'
+
+use 'Nash0x7E2/awesome-flutter-snippets'
+use 'dsznajder/vscode-es7-javascript-react-snippets'
+use 'joy-yu/vsc-css-snippets'
 -- DB
 use 'tpope/vim-dadbod'
 use 'kristijanhusak/vim-dadbod-ui'
@@ -95,12 +99,6 @@ use 'kevinhwang91/rnvimr'
 -- Flutter 
 use 'akinsho/flutter-tools.nvim'
 use 'akinsho/dependency-assist.nvim'
--- Search
-use 'romainl/vim-cool'
--- Text objects
-use 'wellle/targets.vim'
--- Wrapping/delimiters
-use {'machakann/vim-sandwich', {'andymass/vim-matchup', event = 'VimEnter *'}}
 -- Test
 use 'vim-test/vim-test'
 end)

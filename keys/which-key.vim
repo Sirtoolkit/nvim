@@ -36,14 +36,11 @@ let g:which_key_map['h'] = [ '<C-W>s'                                          ,
 let g:which_key_map['v'] = [ '<C-W>v'                                          , 'split right']
 let g:which_key_map['d'] = [ ':Bdelete'                                        , 'delete-buffer']
 let g:which_key_map['r'] = [ ':RnvimrToggle'                                   , 'ranger']
-" let g:which_key_map['u'] = [ ':lua vim.lsp.buf.code_action()'                  , 'code action']
-" let g:which_key_map['i'] = [ ':lua vim.lsp.buf.hover()'                        , 'hover']
-" let g:which_key_map['o'] = [ ':lua vim.lsp.buf.definition()'                   , 'definition']
-" let g:which_key_map['p'] = [ ':lua vim.lsp.buf.formatting()'                   , 'formatting']
-nmap <leader>u :lua vim.lsp.buf.code_action()<CR>
-nmap <leader>i :lua vim.lsp.buf.hover()<CR>
-nmap <leader>o :lua vim.lsp.buf.definition()<CR>
-nmap <leader>p :lua vim.lsp.buf.formatting()<CR>
+let g:which_key_map['y'] = [ ':Lspsaga lsp_finder'                             , 'finder']
+let g:which_key_map['u'] = [ ':Lspsaga code_action'                            , 'code action']
+let g:which_key_map['i'] = [ ':Lspsaga signature_help'                         , 'signature help']
+let g:which_key_map['o'] = [ ':Lspsaga rename'                                 , 'rename']
+let g:which_key_map['p'] = [ ':Lspsaga preview_definition'                     , 'preview definition']
 
 " Group mappings
 
