@@ -2,7 +2,6 @@ lua require'lspconfig'.dartls.setup{}
 lua require'lspconfig'.tsserver.setup{}
 lua require'lspconfig'.vimls.setup{}
 lua require'lspconfig'.cssls.setup{}
-lua require'lspconfig'.jsonls.setup {}
 lua require'dependency_assist'.setup{}
 lua require'flutter-tools'.setup{}
 lua require'lspconfig'.clangd.setup{}
@@ -14,10 +13,10 @@ lua << EOF
         vim.fn.sign_define('LspDiagnosticsSignHint', {text='', texthl='LspDiagnosticsSignHint', linehl='', numhl=''})
 EOF
 
-autocmd BufNewFile,BufRead *.cpp,*.html,*.js,*.java let g:completion_enable_snippet = 'UltiSnips'
+autocmd BufNewFile,BufRead *.cpp,*.html,*.js,*.ts,*.java let g:completion_enable_snippet = 'UltiSnips'
 let g:UltiSnipsExpandTrigger="<tab>"
 
-autocmd BufNewFile,BufRead *.dart,*.css,*.jsx,*.ts let g:completion_enable_snippet = 'vim-vsnip' 
+autocmd BufNewFile,BufRead *.dart,*.css,*.jsx,*.tsx let g:completion_enable_snippet = 'vim-vsnip' 
 imap <expr> <CR> vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<CR>'
 
         inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
