@@ -18,7 +18,7 @@ use 'RRethy/vim-illuminate'
 use 'easymotion/vim-easymotion'
 use 'machakann/vim-highlightedyank'
 -- Ident
-use 'glepnir/indent-guides.nvim'
+use 'Yggdroot/indentLine'
 -- Easymotion
 use 'easymotion/vim-easymotion'
 -- Tree
@@ -43,8 +43,6 @@ use 'tpope/vim-fugitive'
 use 'tpope/vim-rhubarb'
 use 'junegunn/gv.vim'
 use 'rhysd/git-messenger.vim'
--- Start Screen
-use 'glepnir/dashboard-nvim'
 -- See what keys do like in emacs
 use 'liuchengxu/vim-which-key'
 -- Better tabline
@@ -63,8 +61,6 @@ use 'wesQ3/vim-windowswap'
 -- FZF 
  use {'junegunn/fzf',run='-> fzf#install()'} 
  use {'yuki-yano/fzf-preview.vim',branch='release/rpc'}
--- Clap
-use 'liuchengxu/vim-clap'
 -- Easily Create Gists
 use 'mattn/vim-gist'
 -- Colorizer
@@ -94,8 +90,6 @@ use 'kristijanhusak/vim-dadbod-completion'
 use 'sbdchd/neoformat'
 -- Live Server
 use {'turbio/bracey.vim', run = 'npm install --prefix server'}
--- Rnvimr
-use 'kevinhwang91/rnvimr'
 -- Flutter 
 use 'akinsho/flutter-tools.nvim'
 use 'akinsho/dependency-assist.nvim'
