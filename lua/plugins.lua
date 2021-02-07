@@ -19,8 +19,6 @@ use 'easymotion/vim-easymotion'
 use 'machakann/vim-highlightedyank'
 -- Ident
 use 'Yggdroot/indentLine'
--- Easymotion
-use 'easymotion/vim-easymotion'
 -- Tree
 use 'kyazdani42/nvim-tree.lua'
 -- Surround
