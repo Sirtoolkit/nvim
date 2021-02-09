@@ -6,7 +6,8 @@ lua require'dependency_assist'.setup{}
 lua require'flutter-tools'.setup{}
 lua require'lspconfig'.clangd.setup{}
 lua require'lspconfig'.pyright.setup{}
-lua require'lspconfig'.groovyls.setup{}
+lua require'lspconfig'.jdtls.setup{}
+
 lua << EOF
         vim.fn.sign_define('LspDiagnosticsSignError', {text='', texthl='LspDiagnosticsSignError',linehl='', numhl=''})
         vim.fn.sign_define('LspDiagnosticsSignWarning', {text='', texthl='LspDiagnosticsSignWarning', linehl='', numhl=''})
