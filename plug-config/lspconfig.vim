@@ -2,10 +2,11 @@ lua require'lspconfig'.dartls.setup{}
 lua require'lspconfig'.tsserver.setup{}
 lua require'lspconfig'.vimls.setup{}
 lua require'lspconfig'.cssls.setup{}
+lua require'lspconfig'.clangd.setup{}
+lua require'lspconfig'.pyright.setup{}
+lua require'lspconfig'.jdtls.setup{}
 lua require'dependency_assist'.setup{}
 lua require'flutter-tools'.setup{}
-lua require'lspconfig'.clangd.setup{}
-lua require'lspconfig'.jdtls.setup{}
 
 lua << EOF
         vim.fn.sign_define('LspDiagnosticsSignError', {text='', texthl='LspDiagnosticsSignError',linehl='', numhl=''})
@@ -22,6 +23,7 @@ imap <expr> <CR> vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<CR>'
 
         inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
         inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
         imap <silent> <c-space> <Plug>(completion_trigger)
 
         " Set completeopt to have a better completion experience
