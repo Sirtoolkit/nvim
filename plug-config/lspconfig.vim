@@ -5,6 +5,7 @@ lua require'lspconfig'.cssls.setup{}
 lua require'dependency_assist'.setup{}
 lua require'flutter-tools'.setup{}
 lua require'lspconfig'.clangd.setup{}
+lua require'lspconfig'.jdtls.setup{}
 
 lua << EOF
         vim.fn.sign_define('LspDiagnosticsSignError', {text='', texthl='LspDiagnosticsSignError',linehl='', numhl=''})
