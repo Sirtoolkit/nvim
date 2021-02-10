@@ -47,23 +47,19 @@ use 'liuchengxu/vim-which-key'
 use 'romgrk/barbar.nvim'
 -- Find and replace
 use 'brooth/far.vim'
--- Auto change html tags
-use 'AndrewRadev/tagalong.vim'
 -- MultiCursor
 use 'terryma/vim-multiple-cursors'
 -- async tasks
 use 'skywind3000/asynctasks.vim'
 use 'skywind3000/asyncrun.vim'
--- Swap windows
-use 'wesQ3/vim-windowswap'
 -- FZF 
- use {'junegunn/fzf',run='-> fzf#install()'} 
- use {'yuki-yano/fzf-preview.vim',branch='release/rpc'}
+use {'junegunn/fzf',run='-> fzf#install()'} 
+use {'yuki-yano/fzf-preview.vim',branch='release/rpc'}
 -- Easily Create Gists
 use 'mattn/vim-gist'
 -- Colorizer
 use 'norcalli/nvim-colorizer.lua'
-use 'frazrepo/vim-rainbow'
+use 'luochen1990/rainbow'
 -- Intuitive buffer closing
 use 'moll/vim-bbye'
 -- Debugging

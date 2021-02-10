@@ -4,6 +4,8 @@ let g:far#source='rgnvim'
 " let g:far#source='ag'
 
 set lazyredraw            " improve scrolling performance when navigating through large results
+set regexpengine=1        " use old regexp engine
+set ignorecase smartcase  " ignore case only when the pattern contains no capital letters
 
 let g:far#window_width=50
 " Use %:p with buffer option only

@@ -17,8 +17,8 @@ let g:EasyMotion_do_shade = 0
 " nmap <Leader>f <Plug>(easymotion-overwin-f)
 
 " s{char}{char} to move to {char}{char}
-nmap <silent> s <Plug>(easymotion-s2)
-nmap <silent> S <Plug>(easymotion-overwin-f2)
+" nmap <silent> s <Plug>(easymotion-s2)
+" nmap <silent> S <Plug>(easymotion-overwin-f2)
 " map  n <Plug>(easymotion-next)
 " map  N <Plug>(easymotion-prev)
 " nmap S <Plug>(easymotion-overwin-t)

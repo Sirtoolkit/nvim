@@ -35,11 +35,10 @@ let g:which_key_map['.'] = [ ':e $MYVIMRC'                                     ,
 let g:which_key_map['h'] = [ '<C-W>s'                                          , 'split below']
 let g:which_key_map['v'] = [ '<C-W>v'                                          , 'split right']
 let g:which_key_map['d'] = [ ':Bdelete'                                        , 'delete-buffer']
-let g:which_key_map['r'] = [ ':RnvimrToggle'                                   , 'ranger']
 let g:which_key_map['y'] = [ ':Lspsaga lsp_finder'                             , 'finder']
 let g:which_key_map['u'] = [ ':Lspsaga code_action'                            , 'code action']
 let g:which_key_map['i'] = [ ':Lspsaga signature_help'                         , 'signature help']
-let g:which_key_map['o'] = [ ':Lspsaga rename'                                 , 'rename']
+let g:which_key_map['r'] = [ ':Lspsaga rename'                                 , 'rename']
 let g:which_key_map['p'] = [ ':Lspsaga preview_definition'                     , 'preview definition']
 
 " Group mappings

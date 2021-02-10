@@ -26,7 +26,6 @@ source $HOME/.config/nvim/keys/mappings.vim
   source $HOME/.config/nvim/plug-config/closetags.vim
   source $HOME/.config/nvim/plug-config/barbar.vim
   source $HOME/.config/nvim/plug-config/far.vim
-  source $HOME/.config/nvim/plug-config/tagalong.vim
   source $HOME/.config/nvim/plug-config/asynctask.vim
   source $HOME/.config/nvim/plug-config/window-swap.vim
   source $HOME/.config/nvim/plug-config/nvimtree.vim
@@ -36,13 +35,9 @@ source $HOME/.config/nvim/keys/mappings.vim
   source $HOME/.config/nvim/plug-config/lspconfig.vim
   source $HOME/.config/nvim/plug-config/dbui.vim
   source $HOME/.config/nvim/plug-config/multicursor.vim
-  source /home/sirpicsa/.config/nvim/plug-config/indent.vim
+  source $HOME/.config/nvim/plug-config/indent.vim
   luafile $HOME/.config/nvim/lua/treesitter.lua
   luafile $HOME/.config/nvim/lua/plug-colorizer.lua
   luafile $HOME/.config/nvim/lua/dev-icons.lua
   luafile $HOME/.config/nvim/lua/lsp_saga.lua
-  luafile /home/sirpicsa/.config/nvim/lua/nvim-compe.lua
- 
-" Better nav for omnicomplete TODO figure out why this is being overridden
-inoremap <expr> <c-j> ("\<C-n>")
-inoremap <expr> <c-k> ("\<C-p>")
+  luafile $HOME/.config/nvim/lua/nvim-compe.lua
