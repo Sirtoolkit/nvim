@@ -5,35 +5,17 @@ lua require'lspconfig'.cssls.setup{}
 lua require'lspconfig'.clangd.setup{}
 lua require'lspconfig'.pyright.setup{}
 lua require'lspconfig'.jdtls.setup{}
+lua require'lspconfig'.html.setup{}
 lua require'dependency_assist'.setup{}
 lua require'flutter-tools'.setup{}
 
-lua << EOF
-        vim.fn.sign_define('LspDiagnosticsSignError', {text='', texthl='LspDiagnosticsSignError',linehl='', numhl=''})
-        vim.fn.sign_define('LspDiagnosticsSignWarning', {text='', texthl='LspDiagnosticsSignWarning', linehl='', numhl=''})
-        vim.fn.sign_define('LspDiagnosticsSignInformation', {text='', texthl='LspDiagnosticsSignInformation', linehl='', numhl=''})
-        vim.fn.sign_define('LspDiagnosticsSignHint', {text='', texthl='LspDiagnosticsSignHint', linehl='', numhl=''})
-EOF
+set completeopt=menu,menuone,noselect
 
-autocmd BufNewFile,BufRead *.cpp,*.html,*.js,*.ts,*.java let g:completion_enable_snippet = 'UltiSnips'
-let g:UltiSnipsExpandTrigger="<tab>"
-
-autocmd BufNewFile,BufRead *.dart,*.css,*.jsx,*.tsx let g:completion_enable_snippet = 'vim-vsnip' 
-imap <expr> <CR> vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<CR>'
-
-        inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
-        inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-
-        imap <silent> <c-space> <Plug>(completion_trigger)
-
-        " Set completeopt to have a better completion experience
-        set completeopt=menuone,noinsert,noselect
-
-        " Avoid showing message extra message when using completion
-        set shortmess+=c
-
-        let g:completion_sorting = "length"
-        let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy', 'all']
+inoremap <silent><expr> <C-Space> compe#complete()
+inoremap <silent><expr> <CR>      compe#confirm('<CR>')
+inoremap <silent><expr> <C-e>     compe#close('<C-e>')
+inoremap <silent><expr> <C-f>     compe#scroll({ 'delta': +4 })
+inoremap <silent><expr> <C-d>     compe#scroll({ 'delta': -4 })
 
 nnoremap <silent> K :Lspsaga hover_doc<CR>
 nnoremap <silent> <C-f> <cmd>lua require('lspsaga.hover').smart_scroll_hover(1)<CR>

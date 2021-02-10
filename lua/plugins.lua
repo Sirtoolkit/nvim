@@ -68,7 +68,7 @@ use 'frazrepo/vim-rainbow'
 use 'moll/vim-bbye'
 -- Debugging
 use 'neovim/nvim-lspconfig'
-use 'nvim-lua/completion-nvim'
+use 'hrsh7th/nvim-compe'
 use 'glepnir/lspsaga.nvim'
 -- Snippets
 use 'SirVer/ultisnips'
