@@ -22,18 +22,17 @@ local colors = {
     line_bg = '#504945',
     fg = '#EBDBB2',
 
-    fg_green = '#65a380',
     yellow = '#fabd2f',
     cyan = '#008080',
 
-    darkblue = '#081633',
     green = '#afd700',
     orange = '#FF8800',
-    purple = '#689D6A',
+    red = '#ec5f67',
 
     magenta = '#c678dd',
+    green_normal = '#B8BB26',
     blue = '#689D6A';
-    red = '#ec5f67'
+
 }
 
 local function lsp_status(status)
@@ -115,7 +114,7 @@ gls.left[2] = {
           ['!']  = '',
       }
       local mode_color = {
-          n = colors.green,
+          n = colors.green_normal,
           i = colors.blue,
           v=colors.magenta,
           [''] = colors.blue,
@@ -126,8 +125,8 @@ gls.left[2] = {
           S=colors.orange,
           [''] = colors.orange,
           ic = colors.yellow,
-          R = colors.purple,
-          Rv = colors.purple,
+          R = colors.blue,
+          Rv = colors.blue,
           cv = colors.red,
           ce=colors.red, 
           r = colors.cyan,
@@ -135,7 +134,7 @@ gls.left[2] = {
           ['r?'] = colors.cyan,
           ['!']  = colors.green,
           t = colors.green,
-          c  = colors.purple,
+          c  = colors.blue,
           ['r?'] = colors.red,
           ['r']  = colors.red,
           rm = colors.red,
@@ -144,7 +143,7 @@ gls.left[2] = {
       }
       local vim_mode = vim.fn.mode()
       vim.api.nvim_command('hi GalaxyViMode guifg='..mode_color[vim_mode])
-      return alias[vim_mode] .. '▋   '
+      return alias[vim_mode] .. '▋   '
     end,
     highlight = {colors.red,colors.line_bg,'bold'},
   },
@@ -220,7 +219,6 @@ gls.left[10] = {
   }
 }
 
-
 gls.left[11] = {
 Space2 = {
     provider = function() return ' ' end,
@@ -228,52 +226,7 @@ Space2 = {
   }
 }
 
-gls.left[12] = {
-LeftEnd2 = {
-    provider = function() return '' end,
-    highlight = { colors.line_bg, colors.bg },
-  }
-}
 
-gls.left[13] = {
-  DiagnosticError = {
-    provider = 'DiagnosticError',
-    icon = '  ',
-    highlight = {colors.red,colors.line_bg},
-  }
-}
-
-gls.left[14] = {
-  Space = {
-    provider = function () return ' ' end,
-    highlight = {colors.line_bg,colors.line_bg},
-  }
-}
- 
-gls.left[15] = {
-  DiagnosticWarn = {
-    provider = 'DiagnosticWarn',
-    icon = '  ',
-    highlight = {colors.yellow,colors.line_bg},
-  }
-}
-
-gls.left[16] = {
-  Space = {
-    provider = function () return ' ' end,
-    highlight = {colors.line_bg,colors.line_bg},
-  }
-}
-
-gls.left[17] = {
-   DiagnosticInfo= {
-    provider = 'DiagnosticInfo',
-    icon = '  ',
-    highlight = {colors.orange,colors.line_bg},
-    separator = ' ',
-    separator_highlight = { colors.line_bg, colors.bg  },
-  }
-}
 
 gls.right[1]= {
   FileFormat = {
@@ -298,7 +251,7 @@ Heart = {
     provider = function() return ' ' end,
     separator = ' | ',
     separator_highlight = {colors.blue,colors.line_bg},
-    highlight = {colors.green,colors.line_bg},
+    highlight = {colors.green_normal,colors.line_bg},
   }
 }
 
@@ -308,8 +261,8 @@ gls.short_line_left[1] = {
     provider = 'FileTypeName',
     separator = '',
     condition = has_file_type,
-    separator_highlight = {colors.purple,colors.bg},
-    highlight = {colors.fg,colors.purple}
+    separator_highlight = {colors.blue,colors.bg},
+    highlight = {colors.fg,colors.blue}
   }
 }
 
@@ -319,8 +272,8 @@ gls.short_line_right[1] = {
     provider= 'BufferIcon',
     separator = '',
     condition = has_file_type,
-    separator_highlight = {colors.purple,colors.bg},
-    highlight = {colors.fg,colors.purple}
+    separator_highlight = {colors.blue,colors.bg},
+    highlight = {colors.fg,colors.blue}
   }
 }
 EOF

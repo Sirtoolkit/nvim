@@ -25,16 +25,18 @@ use 'kyazdani42/nvim-tree.lua'
 use 'tpope/vim-surround'
 -- Treesitter
 use 'nvim-treesitter/nvim-treesitter'
+-- Rainbow
+use 'p00f/nvim-ts-rainbow'
 -- Cool Icons
 use 'kyazdani42/nvim-web-devicons'
 -- Auto pairs for '(' '[' '{'
-use 'jiangmiao/auto-pairs'
--- Closetags
-use 'alvan/vim-closetag'
+use 'windwp/nvim-autopairs'
 -- Themes
-use 'morhetz/gruvbox'
+use {"npxbr/gruvbox.nvim", requires = {"tjdevries/colorbuddy.vim"}}
 -- Status Line
 use 'glepnir/galaxyline.nvim'
+-- Buffer Bar
+use 'akinsho/nvim-bufferline.lua'
 -- Git
 use 'airblade/vim-gitgutter'
 use 'tpope/vim-fugitive'
@@ -43,29 +45,23 @@ use 'junegunn/gv.vim'
 use 'rhysd/git-messenger.vim'
 -- See what keys do like in emacs
 use 'liuchengxu/vim-which-key'
--- Better tabline
-use 'romgrk/barbar.nvim'
 -- Find and replace
 use 'brooth/far.vim'
--- MultiCursor
-use 'terryma/vim-multiple-cursors'
 -- async tasks
 use 'skywind3000/asynctasks.vim'
 use 'skywind3000/asyncrun.vim'
--- FZF 
-use {'junegunn/fzf',run='-> fzf#install()'} 
-use {'yuki-yano/fzf-preview.vim',branch='release/rpc'}
 -- Easily Create Gists
 use 'mattn/vim-gist'
 -- Colorizer
 use 'norcalli/nvim-colorizer.lua'
-use 'luochen1990/rainbow'
 -- Intuitive buffer closing
 use 'moll/vim-bbye'
 -- Debugging
 use 'neovim/nvim-lspconfig'
 use 'hrsh7th/nvim-compe'
 use 'glepnir/lspsaga.nvim'
+use 'onsails/lspkind-nvim'
+use 'anott03/nvim-lspinstall'
 -- Snippets
 use 'SirVer/ultisnips'
 use 'honza/vim-snippets'
@@ -75,13 +71,10 @@ use 'hrsh7th/vim-vsnip-integ'
 
 use 'Nash0x7E2/awesome-flutter-snippets'
 use 'dsznajder/vscode-es7-javascript-react-snippets'
-use 'joy-yu/vsc-css-snippets'
 -- DB
 use 'tpope/vim-dadbod'
 use 'kristijanhusak/vim-dadbod-ui'
 use 'kristijanhusak/vim-dadbod-completion'
--- Format
-use 'sbdchd/neoformat'
 -- Live Server
 use {'turbio/bracey.vim', run = 'npm install --prefix server'}
 -- Flutter 

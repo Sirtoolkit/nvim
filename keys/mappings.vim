@@ -13,18 +13,6 @@ nnoremap <Space> <Nop>
 vnoremap < <gv
 vnoremap > >gv
 
-if exists('g:vscode')
-
-  " Simulate same TAB behavior in VSCode
-  nmap <Tab> :Tabnext<CR>
-  nmap <S-Tab> :Tabprev<CR>
-
-else
-
-  " Better nav for omnicomplete
-  inoremap <expr> <c-j> ("\<C-n>")
-  inoremap <expr> <c-k> ("\<C-p>")
-
   " I hate escape more than anything else
   inoremap jk <Esc>
   inoremap kj <Esc>
@@ -46,6 +34,7 @@ else
 
   " Alternate way to save
   nnoremap <silent> <C-s> :w!<CR>
+  nnoremap <silent> <C-p> <cmd>lua vim.lsp.buf.formatting()<CR>
   " Alternate way to quit
   nnoremap <silent> <C-Q> :q!<CR>
   " Use control-c instead of escape
@@ -85,7 +74,6 @@ else
       nnoremap <C-Right> :vertical resize +2<CR>
   endif
 
-endif
 
 " Better nav for omnicomplete
 inoremap <expr> <c-j> ("\<C-n>")
