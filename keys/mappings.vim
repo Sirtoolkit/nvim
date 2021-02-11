@@ -34,7 +34,6 @@ vnoremap > >gv
 
   " Alternate way to save
   nnoremap <silent> <C-s> :w!<CR>
-  nnoremap <silent> <C-p> <cmd>lua vim.lsp.buf.formatting()<CR>
   " Alternate way to quit
   nnoremap <silent> <C-Q> :q!<CR>
   " Use control-c instead of escape

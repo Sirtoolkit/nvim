@@ -82,4 +82,6 @@ use 'akinsho/flutter-tools.nvim'
 use 'akinsho/dependency-assist.nvim'
 -- Test
 use 'vim-test/vim-test'
+-- Format
+use 'sbdchd/neoformat'
 end)

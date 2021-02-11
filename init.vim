@@ -30,6 +30,7 @@
   source $HOME/.config/nvim/plug-config/dbui.vim
   source $HOME/.config/nvim/plug-config/indent.vim
   source $HOME/.config/nvim/plug-config/bufferline.vim
+  source $HOME/.config/nvim/plug-config/prettier.vim
   luafile $HOME/.config/nvim/lua/plug-colorizer.lua
   luafile $HOME/.config/nvim/lua/dev-icons.lua
   luafile $HOME/.config/nvim/lua/lsp_saga.lua
