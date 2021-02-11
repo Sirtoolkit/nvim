@@ -23,16 +23,16 @@ use 'Yggdroot/indentLine'
 use 'kyazdani42/nvim-tree.lua'
 -- Surround
 use 'tpope/vim-surround'
--- Treesitter
-use 'nvim-treesitter/nvim-treesitter'
+-- Polyglot 
+use 'sheerun/vim-polyglot'
 -- Rainbow
-use 'p00f/nvim-ts-rainbow'
+use 'frazrepo/vim-rainbow'
 -- Cool Icons
 use 'kyazdani42/nvim-web-devicons'
 -- Auto pairs for '(' '[' '{'
 use 'windwp/nvim-autopairs'
 -- Themes
-use {"npxbr/gruvbox.nvim", requires = {"tjdevries/colorbuddy.vim"}}
+use 'sainnhe/gruvbox-material'
 -- Status Line
 use 'glepnir/galaxyline.nvim'
 -- Buffer Bar

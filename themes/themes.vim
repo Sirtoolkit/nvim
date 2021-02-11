@@ -1,9 +1,13 @@
-syntax on
-" colorscheme  gruvbox
-lua require("colorbuddy").colorscheme("gruvbox")
-let g:gruvbox_contrast_dark ="hard"
-let g:gruvbox_invert_tabline=1
-let g:gruvbox_transparent_bg=1
-highlight Normal     ctermbg=NONE guibg=NONE
-highlight LineNr     ctermbg=NONE guibg=NONE
-highlight SignColumn ctermbg=NONE guibg=NONE
+    if has('termguicolors')
+      set termguicolors
+    endif
+
+    let g:gruvbox_material_background = 'hard'
+    let g:gruvbox_material_enable_italic = 1
+    let g:gruvbox_material_disable_italic_comment = 1
+    let g:gruvbox_material_enable_bold = 1
+    let g:gruvbox_material_transparent_background = 1
+    let g:gruvbox_material_diagnostic_text_highlight = 1
+    let g:gruvbox_material_diagnostic_line_highlight = 1
+    let g:gruvbox_material_current_word = 'bold'
+     colorscheme gruvbox-material
