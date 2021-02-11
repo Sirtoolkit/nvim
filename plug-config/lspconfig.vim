@@ -4,7 +4,7 @@ lua require'lspconfig'.clangd.setup{}
 lua require'lspconfig'.tsserver.setup{}
 lua require'lspconfig'.vimls.setup{}
 lua require'lspconfig'.cssls.setup{}
-lua require'lspconfig'.pyright.setup{}
+lua require'lspconfig'.pyls.setup{}
 lua require'lspconfig'.html.setup{}
 lua require'dependency_assist'.setup{}
 lua require'flutter-tools'.setup{}
