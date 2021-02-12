@@ -9,19 +9,14 @@
   source $HOME/.config/nvim/general/functions.vim
   source $HOME/.config/nvim/keys/mappings.vim
 
-  source $HOME/.config/nvim/plug-config/easymotion.vim
   source $HOME/.config/nvim/plug-config/highlightyank.vim
 
   " Themes
   source $HOME/.config/nvim/themes/themes.vim
-  source $HOME/.config/nvim/themes/galaxyline.vim
 
   " Plugin Configuration
   source $HOME/.config/nvim/keys/which-key.vim
-  source $HOME/.config/nvim/plug-config/vim-commentary.vim
-  source $HOME/.config/nvim/plug-config/easymotion.vim
-  source $HOME/.config/nvim/plug-config/gitgutter.vim
-  source $HOME/.config/nvim/plug-config/git-messenger.vim
+  source $HOME/.config/nvim/plug-config/nvim-comment.vim
   source $HOME/.config/nvim/plug-config/far.vim
   source $HOME/.config/nvim/plug-config/asynctask.vim
   source $HOME/.config/nvim/plug-config/nvimtree.vim
@@ -29,10 +24,12 @@
   source $HOME/.config/nvim/plug-config/lspconfig.vim
   source $HOME/.config/nvim/plug-config/dbui.vim
   source $HOME/.config/nvim/plug-config/indent.vim
-  source $HOME/.config/nvim/plug-config/bufferline.vim
-  source $HOME/.config/nvim/plug-config/prettier.vim
-  luafile $HOME/.config/nvim/lua/plug-colorizer.lua
+  source $HOME/.config/nvim/plug-config/neoformat.vim
   luafile $HOME/.config/nvim/lua/dev-icons.lua
   luafile $HOME/.config/nvim/lua/lsp_saga.lua
   luafile $HOME/.config/nvim/lua/nvim-compe.lua
   luafile $HOME/.config/nvim/lua/lspkind-nvim.lua
+  luafile $HOME/.config/nvim/lua/colorizer-nvim.lua
+  luafile $HOME/.config/nvim/lua/galaxyline-nvim.lua
+  luafile $HOME/.config/nvim/lua/bufferline-nvim.lua
+  luafile $HOME/.config/nvim/lua/gitsigns-nvim.lua

@@ -10,12 +10,11 @@ end
 vim.cmd [[packadd packer.nvim]]
 return require('packer').startup(function() use {'wbthomason/packer.nvim', opt = true}
 -- Better Comments
-use 'tpope/vim-commentary'
+use 'terrortylor/nvim-comment'
 -- Repeat stuff
 use 'tpope/vim-repeat'
 -- highlight all matches under cursor
 use 'RRethy/vim-illuminate'
-use 'easymotion/vim-easymotion'
 use 'machakann/vim-highlightedyank'
 -- Ident
 use 'Yggdroot/indentLine'
@@ -25,22 +24,25 @@ use 'kyazdani42/nvim-tree.lua'
 use 'tpope/vim-surround'
 -- Polyglot 
 use 'sheerun/vim-polyglot'
--- Rainbow
-use 'frazrepo/vim-rainbow'
--- Cool Icons
-use 'kyazdani42/nvim-web-devicons'
 -- Auto pairs for '(' '[' '{'
 use 'windwp/nvim-autopairs'
 -- Themes
 use 'sainnhe/gruvbox-material'
 -- Status Line
-use 'glepnir/galaxyline.nvim'
+use {
+  'glepnir/galaxyline.nvim', branch = 'main', config = function() require'statusline' end,
+  requires = {'kyazdani42/nvim-web-devicons'}
+ }
 -- Buffer Bar
 use 'akinsho/nvim-bufferline.lua'
 -- Git
-use 'airblade/vim-gitgutter'
+use {
+  'lewis6991/gitsigns.nvim',
+  requires = {
+    'nvim-lua/plenary.nvim'
+  }
+}
 use 'tpope/vim-fugitive'
-use 'tpope/vim-rhubarb'
 use 'junegunn/gv.vim'
 use 'rhysd/git-messenger.vim'
 -- See what keys do like in emacs
@@ -55,7 +57,7 @@ use 'mattn/vim-gist'
 -- Colorizer
 use 'norcalli/nvim-colorizer.lua'
 -- Intuitive buffer closing
-use 'moll/vim-bbye'
+use {'ojroques/nvim-bufdel'}
 -- Debugging
 use 'neovim/nvim-lspconfig'
 use 'hrsh7th/nvim-compe'

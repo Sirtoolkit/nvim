@@ -1,4 +1,4 @@
-lua << EOF
+
 require'bufferline'.setup{
 options = {
  diagnostics =  "nvim_lsp",
@@ -7,4 +7,7 @@ options = {
 	end
 }
 }
-EOF
+
+require('bufdel').setup {
+  next = 'alternate'  -- or 'cycle'
+}

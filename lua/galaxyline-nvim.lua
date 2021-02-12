@@ -1,4 +1,3 @@
-lua << EOF
 local gl = require('galaxyline')
 local gls = gl.section
 local extension = require('galaxyline.provider_extensions')
@@ -276,4 +275,3 @@ gls.short_line_right[1] = {
     highlight = {colors.fg,colors.blue}
   }
 }
-EOF
