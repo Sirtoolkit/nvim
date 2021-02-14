@@ -24,6 +24,8 @@ use 'kyazdani42/nvim-tree.lua'
 use 'tpope/vim-surround'
 -- Polyglot 
 use 'sheerun/vim-polyglot'
+-- ScreenShot
+use {'jmckiern/vim-shoot',run='\"./install.py\" chromedriver' }
 -- Auto pairs for '(' '[' '{'
 use 'windwp/nvim-autopairs'
 -- Themes
