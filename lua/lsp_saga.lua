@@ -20,6 +20,4 @@ finder_action_keys = {
 definition_preview_icon = '  ',
 border_style = 1,
 rename_prompt_prefix = '➤',
--- like server_filetype_map = {metals = {'sbt', 'scala'}}
--- server_filetype_map = {}
 }

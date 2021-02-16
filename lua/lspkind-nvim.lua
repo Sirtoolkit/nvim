@@ -2,6 +2,7 @@
 require('lspkind').init({
     with_text = true,
     symbol_map = {
+      Snippet = '﬌',
       Text = '',
       Buffer = '﬘',
       Method = 'ƒ',
@@ -16,7 +17,6 @@ require('lspkind').init({
       Value = '',
       Enum = '了',
       Keyword = '',
-      Snippet = '﬌',
       Color = '',
       File = '',
       Folder = '',
