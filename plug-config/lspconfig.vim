@@ -1,11 +1,14 @@
 lua require'lspconfig'.dartls.setup{}
 lua require'lspconfig'.clangd.setup{}
 lua require'lspconfig'.jdtls.setup{}
+lua require'lspconfig'.kotlin_language_server.setup{}
+
 lua require'lspconfig'.tsserver.setup{}
 lua require'lspconfig'.vimls.setup{}
 lua require'lspconfig'.cssls.setup{}
 lua require'lspconfig'.pyright.setup{}
 lua require'lspconfig'.html.setup{}
+lua require'lspconfig'.intelephense.setup{}
 
 lua require'dependency_assist'.setup{}
 lua require'flutter-tools'.setup{}
