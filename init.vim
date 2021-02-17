@@ -26,6 +26,7 @@
   source $HOME/.config/nvim/plug-config/indent.vim
   source $HOME/.config/nvim/plug-config/neoformat.vim
   source $HOME/.config/nvim/plug-config/rainbow.vim
+  source $HOME/.config/nvim/plug-config/nvim-shoot.vim
   luafile $HOME/.config/nvim/lua/dev-icons.lua
   luafile $HOME/.config/nvim/lua/nvim-compe.lua
   luafile $HOME/.config/nvim/lua/lspkind-nvim.lua
