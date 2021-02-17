@@ -1,7 +1,6 @@
 lua require'lspconfig'.dartls.setup{}
 lua require'lspconfig'.clangd.setup{}
 lua require'lspconfig'.jdtls.setup{}
-lua require'lspconfig'.kotlin_language_server.setup{}
 
 lua require'lspconfig'.tsserver.setup{}
 lua require'lspconfig'.vimls.setup{}
