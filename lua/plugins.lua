@@ -89,6 +89,4 @@ use 'akinsho/dependency-assist.nvim'
 use 'vim-test/vim-test'
 -- Format
 use 'sbdchd/neoformat'
--- JAVA
-use  'artur-shaik/vim-javacomplete2'
 end)
