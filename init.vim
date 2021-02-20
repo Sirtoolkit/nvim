@@ -35,3 +35,4 @@
   luafile $HOME/.config/nvim/lua/bufferline-nvim.lua
   luafile $HOME/.config/nvim/lua/gitsigns-nvim.lua
   luafile $HOME/.config/nvim/lua/autopairs-nvim.lua
+  luafile $HOME/.config/nvim/lua/treesitter-nvim.lua

@@ -11,9 +11,8 @@ vim.cmd [[packadd packer.nvim]]
 return require('packer').startup(function() use {'wbthomason/packer.nvim', opt = true}
 -- Better Comments
 use 'terrortylor/nvim-comment'
--- Repeat stuff
+-- Repeat stuff 
 use 'tpope/vim-repeat'
--- highlight all matches under cursor
 use 'RRethy/vim-illuminate'
 use 'machakann/vim-highlightedyank'
 -- Ident
@@ -22,8 +21,8 @@ use 'Yggdroot/indentLine'
 use 'kyazdani42/nvim-tree.lua'
 -- Surround
 use 'tpope/vim-surround'
--- Polyglot 
-use 'sheerun/vim-polyglot'
+-- Treesitter 
+use 'nvim-treesitter/nvim-treesitter'
 -- Rainbow
 use {'luochen1990/rainbow'}
 -- ScreenShot
@@ -90,4 +89,6 @@ use 'akinsho/dependency-assist.nvim'
 use 'vim-test/vim-test'
 -- Format
 use 'sbdchd/neoformat'
+-- JAVA
+use  'artur-shaik/vim-javacomplete2'
 end)
