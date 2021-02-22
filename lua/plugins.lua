@@ -66,7 +66,6 @@ use 'neovim/nvim-lspconfig'
 use 'hrsh7th/nvim-compe'
 use 'glepnir/lspsaga.nvim'
 use 'onsails/lspkind-nvim'
-use 'anott03/nvim-lspinstall'
 -- Snippets
 use 'SirVer/ultisnips'
 use 'honza/vim-snippets'
@@ -89,4 +88,6 @@ use 'akinsho/dependency-assist.nvim'
 use 'vim-test/vim-test'
 -- Format
 use 'sbdchd/neoformat'
+-- Dispatch
+use 'tpope/vim-dispatch'
 end)

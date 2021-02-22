@@ -68,10 +68,5 @@ let g:nvim_tree_icons = {
     \ }
 
 nnoremap <C-n> :NvimTreeToggle<CR>
-nnoremap <C-t> :!thunar .<CR>
-" NvimTreeOpen and NvimTreeClose are also available if you need them
-
 set termguicolors " this variable must be enabled for colors to be applied properly
-
-" a list of groups can be found at `:help nvim_tree_highlight`
 highlight NvimTreeFolderIcon guifg='#8EC07C'

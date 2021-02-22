@@ -1,4 +1,4 @@
-local utils = require "lspconfig/utils"
+local utils = require "flutter-tools/utils"
 
 local M = {}
 
@@ -213,11 +213,10 @@ function M.popup_create(title, lines, on_create)
 end
 
 function M.open_split(opts, on_open)
-  local open_cmd = opts.open_cmd or "vnew"
+  local open_cmd = opts.open_cmd or "botright 30vnew"
   local name = opts.filename or "__Flutter_Tools_Unknown__"
   local filetype = opts.filetype
-  local size = opts.win_size or math.ceil(vim.o.columns * 0.33)
-  vim.cmd("botright " .. size .. open_cmd)
+  vim.cmd(open_cmd)
   vim.cmd("setfiletype " .. filetype)
 
   local win = api.nvim_get_current_win()
@@ -228,6 +227,14 @@ function M.open_split(opts, on_open)
   end
   vim.bo[buf].swapfile = false
   vim.bo[buf].buftype = "nofile"
+  vim.wo[win].number = false
+  vim.wo[win].relativenumber = false
+  vim.wo[win].wrap = false
+  vim.bo[buf].buflisted = false
+  vim.bo[buf].bufhidden = "wipe"
+  vim.wo[win].winfixwidth = true
+
+
   if on_open then
     on_open(buf, win)
   end

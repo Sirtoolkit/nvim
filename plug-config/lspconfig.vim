@@ -8,9 +8,18 @@ lua require'lspconfig'.cssls.setup{}
 lua require'lspconfig'.pyright.setup{}
 lua require'lspconfig'.html.setup{}
 lua require'lspconfig'.intelephense.setup{}
+lua require'lspconfig'.bashls.setup{}
 
 lua require'dependency_assist'.setup{}
-lua require'flutter-tools'.setup{}
+
+lua << EOF
+require("flutter-tools").setup {
+  closing_tags = {
+    highlight = "ErrorMsg",
+    prefix = ">"
+  }
+}
+EOF
 
 set completeopt=menu,menuone,noselect
 

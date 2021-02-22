@@ -4,27 +4,8 @@ local labels = require "lspconfig/labels"
 local server_name = "dartls"
 local bin_name = "dart"
 
-local find_dart_sdk_root_path = function()
-  if vim.fn["executable"]("flutter") == 1 then
-    local flutter_path = vim.fn["resolve"](vim.fn["exepath"]("flutter"))
-    local flutter_bin = vim.fn["fnamemodify"](flutter_path, ":h")
-    return os.getenv("HOME") .. "/snap/flutter/common/flutter/bin/cache/dart-sdk/bin/dart"
-  elseif vim.fn["executable"]("dart") == 1 then
-    return vim.fn["resolve"](vim.fn["exepath"]("dart"))
-  else
-    return ''
-  end
-end
-
 local analysis_server_snapshot_path = function()
-  local dart_sdk_root_path = vim.fn["fnamemodify"](find_dart_sdk_root_path(), ":h")
-  local snapshot = dart_sdk_root_path.."/snapshots/analysis_server.dart.snapshot"
-
-  if vim.fn["has"]("win32") == 1 or vim.fn["has"]("win64") == 1 then
-    snapshot = snapshot:gsub("/", "\\")
-  end
-
-  return os.getenv("HOME") .. "/snap/flutter/common/flutter/bin/cache/dart-sdk/bin/snapshots/analysis_server.dart.snapshot"
+    return os.getenv("HOME") .. "/development/flutter/bin/cache/dart-sdk/bin/snapshots/analysis_server.dart.snapshot"
 end
 
 configs[server_name] = {
