@@ -6,20 +6,19 @@
 
   " General Settings
   source $HOME/.config/nvim/general/settings.vim
-  source $HOME/.config/nvim/general/functions.vim
-  source $HOME/.config/nvim/keys/mappings.vim
 
-  source $HOME/.config/nvim/plug-config/highlightyank.vim
+  " Mappings and Keys 
+  source $HOME/.config/nvim/keys/mappings.vim
+  source $HOME/.config/nvim/keys/which-key.vim
 
   " Themes
   source $HOME/.config/nvim/themes/themes.vim
 
-  " Plugin Configuration
-  source $HOME/.config/nvim/keys/which-key.vim
+  " Plugin Configuration - Vimscript
+  source $HOME/.config/nvim/plug-config/asynctask.vim
   source $HOME/.config/nvim/plug-config/nvim-comment.vim
   source $HOME/.config/nvim/plug-config/far.vim
-  source $HOME/.config/nvim/plug-config/asynctask.vim
-  source $HOME/.config/nvim/plug-config/nvimtree.vim
+  source $HOME/.config/nvim/plug-config/highlightyank.vim
   source $HOME/.config/nvim/plug-config/bracey.vim
   source $HOME/.config/nvim/plug-config/lspconfig.vim
   source $HOME/.config/nvim/plug-config/dbui.vim
@@ -28,6 +27,7 @@
   source $HOME/.config/nvim/plug-config/rainbow.vim
   source $HOME/.config/nvim/plug-config/nvim-shoot.vim
 
+  " Plugin Configuration - lua 
   luafile $HOME/.config/nvim/lua/dev-icons.lua
   luafile $HOME/.config/nvim/lua/nvim-compe.lua
   luafile $HOME/.config/nvim/lua/lspkind-nvim.lua
@@ -37,3 +37,4 @@
   luafile $HOME/.config/nvim/lua/gitsigns-nvim.lua
   luafile $HOME/.config/nvim/lua/autopairs-nvim.lua
   luafile $HOME/.config/nvim/lua/treesitter-nvim.lua
+  luafile $HOME/.config/nvim/lua/tree-nvim.lua

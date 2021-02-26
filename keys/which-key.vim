@@ -36,9 +36,9 @@ let g:which_key_map['.'] = [ ':e $MYVIMRC'                                     ,
 let g:which_key_map['h'] = [ '<C-W>s'                                          , 'split below']
 let g:which_key_map['v'] = [ '<C-W>v'                                          , 'split right']
 let g:which_key_map['d'] = [ ':BufDel'                                         , 'delete-buffer']
-let g:which_key_map['T'] = [ ':Dispatch thunar .'                              , 'open folder']
+let g:which_key_map['T'] = [ ':Dispatch! thunar .'                             , 'open folder']
 let g:which_key_map['m'] = [ ':Dispatch! mousepad %'                           , 'open file']
-let g:which_key_map['p'] = [ ':Dispatch! Postman'                              , 'postman']
+let g:which_key_map['P'] = [ ':Dispatch!  Postman'                             , 'postman']
 let g:which_key_map['y'] = [ ':Lspsaga lsp_finder'                             , 'finder']
 let g:which_key_map['u'] = [ ':Lspsaga code_action'                            , 'code action']
 let g:which_key_map['i'] = [ ':Lspsaga signature_help'                         , 'signature help']
@@ -52,8 +52,6 @@ let g:which_key_map.a = {
       \ 'name' : '+actions' ,
       \ 'b' : [':Bracey'                 , 'start live server'],
       \ 's' : [':BraceyStop'             , 'stop live server'],
-      \ 'm' : [':MarkdownPreview'        , 'markdown preview'],
-      \ 'M' : [':MarkdownPreviewStop'    , 'markdown preview stop'],
       \ }
 
 " F is for find and replace
@@ -70,7 +68,6 @@ let g:which_key_map.f = {
       \ 'D' : [':FlutterDevices'                     , 'flutter devices'],
       \ 'e' : [':FlutterEmulators'                   , 'flutter emulators'],
       \ 'a' : [':AddDependency'                      , 'flutter dependency'],
-      \ 'p' : [':FlutterPubGet'                      , 'flutter pub get'],
       \ 'q' : [':FlutterQuit'                        , 'flutter quit'],
       \ 'H' : [':FlutterReload'                      , 'flutter hot reload'],
       \ 'h' : [':FlutterRestart'                     , 'flutter hot restart'],

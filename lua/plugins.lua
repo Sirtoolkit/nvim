@@ -11,16 +11,14 @@ vim.cmd [[packadd packer.nvim]]
 return require('packer').startup(function() use {'wbthomason/packer.nvim', opt = true}
 -- Better Comments
 use 'terrortylor/nvim-comment'
--- Repeat stuff 
-use 'tpope/vim-repeat'
+-- Illuminate
 use 'RRethy/vim-illuminate'
+-- HighlightedYank
 use 'machakann/vim-highlightedyank'
--- Ident
+-- IdentLine
 use 'Yggdroot/indentLine'
 -- Tree
 use 'kyazdani42/nvim-tree.lua'
--- Surround
-use 'tpope/vim-surround'
 -- Treesitter 
 use 'nvim-treesitter/nvim-treesitter'
 -- Rainbow

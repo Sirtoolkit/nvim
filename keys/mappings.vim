@@ -4,9 +4,9 @@ imap <C-h> <C-w>h
 imap <C-j> <C-w>j
 imap <C-k> <C-w>k
 imap <C-l> <C-w>l
+
 " g Leader key
 let mapleader=" "
-" let localleader=" "
 nnoremap <Space> <Nop>
 
 " Better indenting
@@ -16,10 +16,6 @@ vnoremap > >gv
   " I hate escape more than anything else
   inoremap jk <Esc>
   inoremap kj <Esc>
-
-  " Easy CAPS
-  " inoremap <c-u> <ESC>viwUi
-  " nnoremap <c-u> viwU<Esc>
 
   " TAB in general mode will move to text buffer
   nnoremap <silent> <TAB> :bnext<CR>
@@ -64,7 +60,8 @@ vnoremap > >gv
   nnoremap <silent> <M-h>    :vertical resize -2<CR>
   nnoremap <silent> <M-l>    :vertical resize +2<CR>
 
-  let g:elite_mode=0                      " Disable arrows"
+  " Disable arrows.
+  let g:elite_mode=0  
   " Disable arrow movement, resize splits instead.
   if get(g:, 'elite_mode')
       nnoremap <C-Up>    :resize -2<CR>
@@ -74,9 +71,9 @@ vnoremap > >gv
   endif
 
 
-" Better nav for omnicomplete
-inoremap <expr> <c-j> ("\<C-n>")
-inoremap <expr> <c-k> ("\<C-p>")
+  " Better nav for omnicomplete
+  inoremap <expr> <c-j> ("\<C-n>")
+  inoremap <expr> <c-k> ("\<C-p>")
 
 let g:sexp_filetypes = join(['clojure', 'lisp', 'scheme', 'racket', 'jbuild', 'fennel', 'pddl'], ',')
 command! PackerInstall packadd packer.nvim | lua require('plugins').install()
@@ -84,4 +81,3 @@ command! PackerUpdate packadd packer.nvim | lua require('plugins').update()
 command! PackerSync packadd packer.nvim | lua require('plugins').sync()
 command! PackerClean packadd packer.nvim | lua require('plugins').clean()
 command! PackerCompile packadd packer.nvim | lua require('plugins').compile()
-
