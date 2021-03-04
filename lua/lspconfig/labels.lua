@@ -42,3 +42,4 @@ function M.closing_tags(opts)
 end
 
 return M
+
