@@ -8,7 +8,6 @@ require'lspconfig'.cssls.setup{}
 require'lspconfig'.pyright.setup{}
 require'lspconfig'.html.setup{}
 require'lspconfig'.intelephense.setup{}
-require'lspconfig'.bashls.setup{}
 require'lspconfig'.dockerls.setup{}
 
 require'dependency_assist'.setup{}
