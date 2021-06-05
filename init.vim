@@ -20,7 +20,6 @@
   source $HOME/.config/nvim/plug-config/far.vim
   source $HOME/.config/nvim/plug-config/highlightyank.vim
   source $HOME/.config/nvim/plug-config/bracey.vim
-  source $HOME/.config/nvim/plug-config/lspconfig.vim
   source $HOME/.config/nvim/plug-config/dbui.vim
   source $HOME/.config/nvim/plug-config/indent.vim
   source $HOME/.config/nvim/plug-config/neoformat.vim
@@ -38,3 +37,6 @@
   luafile $HOME/.config/nvim/lua/autopairs-nvim.lua
   luafile $HOME/.config/nvim/lua/treesitter-nvim.lua
   luafile $HOME/.config/nvim/lua/tree-nvim.lua
+  luafile $HOME/.config/nvim/lua/flutter-tools-nvim.lua
+  luafile $HOME/.config/nvim/lua/dapui-nvim.lua
+  luafile $HOME/.config/nvim/lua/lspconfig-nvim.lua

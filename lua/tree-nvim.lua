@@ -31,7 +31,7 @@ vim.g.nvim_tree_bindings = {
   ["q"]              = get_lua_cb("close"),
 }
 
-vim.fn.nvim_set_keymap('n', '<c-n>', ':NvimTreeToggle<CR>', {noremap = true})
+vim.api.nvim_set_keymap('n', '<c-n>', ':NvimTreeToggle<CR>', {noremap = true})
 vim.api.nvim_exec(
 [[
 highlight NvimTreeFolderIcon guifg=#8EC07C

@@ -21,7 +21,6 @@ require'compe'.setup {
     spell = true;
     tags = true;
     vsnip = true;
-    ultisnips=true;
     vim_dadbod_completion=true;
   };
 }

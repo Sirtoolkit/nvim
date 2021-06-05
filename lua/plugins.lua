@@ -61,11 +61,11 @@ use 'norcalli/nvim-colorizer.lua'
 use {'ojroques/nvim-bufdel'}
 -- Debugging
 use 'neovim/nvim-lspconfig'
+use 'kabouzeid/nvim-lspinstall'
 use 'hrsh7th/nvim-compe'
 use 'glepnir/lspsaga.nvim'
 use 'onsails/lspkind-nvim'
 -- Snippets
-use 'SirVer/ultisnips'
 use 'honza/vim-snippets'
 
 use 'hrsh7th/vim-vsnip'
@@ -88,4 +88,6 @@ use 'vim-test/vim-test'
 use 'sbdchd/neoformat'
 -- Dispatch
 use 'tpope/vim-dispatch'
+-- Debbuger
+use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
 end)

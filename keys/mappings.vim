@@ -1,4 +1,5 @@
 " Basic Key Mappings
+set completeopt=menu,menuone,noselect
 
 imap <C-h> <C-w>h
 imap <C-j> <C-w>j
@@ -32,6 +33,7 @@ vnoremap > >gv
   nnoremap <silent> <C-s> :w!<CR>
   " Alternate way to quit
   nnoremap <silent> <C-Q> :q!<CR>
+  nnoremap <silent> <C-N> :NvimTreeToggle<CR>
   " Use control-c instead of escape
   nnoremap <silent> <C-c> <Esc>
   " <TAB>: completion.
@@ -74,6 +76,20 @@ vnoremap > >gv
   " Better nav for omnicomplete
   inoremap <expr> <c-j> ("\<C-n>")
   inoremap <expr> <c-k> ("\<C-p>")
+
+inoremap <silent><expr> <C-Space> compe#complete()
+inoremap <silent><expr> <CR>      compe#confirm('<CR>')
+inoremap <silent><expr> <C-e>     compe#close('<C-e>')
+inoremap <silent><expr> <C-f>     compe#scroll({ 'delta': +4 })
+inoremap <silent><expr> <C-d>     compe#scroll({ 'delta': -4 })
+
+nnoremap <silent> K :Lspsaga hover_doc<CR>
+nnoremap <silent> <C-f> <cmd>lua require('lspsaga.hover').smart_scroll_hover(1)<CR>
+nnoremap <silent> <C-b> <cmd>lua require('lspsaga.hover').smart_scroll_hover(-1)<CR>
+
+nnoremap <silent> <leader>cd :Lspsaga show_line_diagnostics<CR>
+nnoremap <silent> [e :Lspsaga lsp_jump_diagnostic_next<CR>
+nnoremap <silent> ]e :Lspsaga lsp_jump_diagnostic_prev<CR>
 
 let g:sexp_filetypes = join(['clojure', 'lisp', 'scheme', 'racket', 'jbuild', 'fennel', 'pddl'], ',')
 command! PackerInstall packadd packer.nvim | lua require('plugins').install()
