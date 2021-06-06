@@ -7,8 +7,7 @@ if fn.empty(fn.glob(install_path)) > 0 then
   execute 'packadd packer.nvim'
 end
 
-vim.cmd [[packadd packer.nvim]]
-return require('packer').startup(function() use {'wbthomason/packer.nvim', opt = true}
+vim.cmd [[packadd packer.nvim]] return require('packer').startup(function() use {'wbthomason/packer.nvim', opt = true}
 -- Better Comments
 use 'terrortylor/nvim-comment'
 -- Illuminate
@@ -55,8 +54,9 @@ use 'skywind3000/asynctasks.vim'
 use 'skywind3000/asyncrun.vim'
 -- Easily Create Gists
 use 'mattn/vim-gist'
--- Colorizer
+-- Colors
 use 'norcalli/nvim-colorizer.lua'
+use 'folke/lsp-colors.nvim'
 -- Intuitive buffer closing
 use {'ojroques/nvim-bufdel'}
 -- Debugging
@@ -65,14 +65,15 @@ use 'kabouzeid/nvim-lspinstall'
 use 'hrsh7th/nvim-compe'
 use 'glepnir/lspsaga.nvim'
 use 'onsails/lspkind-nvim'
+use 'folke/trouble.nvim'
 -- Snippets
-use 'honza/vim-snippets'
-
 use 'hrsh7th/vim-vsnip'
 use 'hrsh7th/vim-vsnip-integ'
 
+use 'honza/vim-snippets'
 use 'Nash0x7E2/awesome-flutter-snippets'
 use 'dsznajder/vscode-es7-javascript-react-snippets'
+use 'rafamadriz/friendly-snippets'
 -- DB
 use 'tpope/vim-dadbod'
 use 'kristijanhusak/vim-dadbod-ui'
@@ -89,5 +90,7 @@ use 'sbdchd/neoformat'
 -- Dispatch
 use 'tpope/vim-dispatch'
 -- Debbuger
-use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
+use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap","Pocco81/DAPInstall.nvim"} }
+-- Term
+use {"akinsho/nvim-toggleterm.lua"}
 end)

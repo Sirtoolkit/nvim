@@ -35,6 +35,7 @@ vnoremap > >gv
   nnoremap <silent> <C-Q> :q!<CR>
   nnoremap <silent> <C-N> :NvimTreeToggle<CR>
   nnoremap <silent> <C-W> :BufDel<CR>
+  nnoremap <silent> <C-T> :ToggleTerm<CR>
   " Use control-c instead of escape
   nnoremap <silent> <C-c> <Esc>
   " <TAB>: completion.

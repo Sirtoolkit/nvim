@@ -1,3 +1,5 @@
+local dap_install = require("dap-install")
+
 require("dapui").setup({
   icons = {
     expanded = "⯆",
@@ -34,3 +36,6 @@ require("dapui").setup({
   }
 })
 
+dap_install.config("python_dbg", {})
+dap_install.config("dart_dbg", {})
+-- dap_install.config("jsnode_dbg", {})
