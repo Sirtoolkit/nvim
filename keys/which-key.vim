@@ -35,10 +35,9 @@ let g:which_key_map['s'] = [ ':call Shoot()'                                   ,
 let g:which_key_map['.'] = [ ':e $MYVIMRC'                                     , 'open init' ]
 let g:which_key_map['h'] = [ '<C-W>s'                                          , 'split below']
 let g:which_key_map['v'] = [ '<C-W>v'                                          , 'split right']
-let g:which_key_map['d'] = [ ':BufDel'                                         , 'delete-buffer']
 let g:which_key_map['T'] = [ ':Dispatch! thunar .'                             , 'open folder']
 let g:which_key_map['m'] = [ ':Dispatch! mousepad %'                           , 'open file']
-let g:which_key_map['P'] = [ ':Dispatch!  Postman'                             , 'postman']
+let g:which_key_map['P'] = [ ':Dispatch! postman'                             , 'postman']
 let g:which_key_map['y'] = [ ':Lspsaga lsp_finder'                             , 'finder']
 let g:which_key_map['u'] = [ ':Lspsaga code_action'                            , 'code action']
 let g:which_key_map['i'] = [ ':Lspsaga signature_help'                         , 'signature help']
@@ -71,7 +70,8 @@ let g:which_key_map.f = {
       \ 'q' : [':FlutterQuit'                        , 'flutter quit'],
       \ 'H' : [':FlutterReload'                      , 'flutter hot reload'],
       \ 'h' : [':FlutterRestart'                     , 'flutter hot restart'],
-      \ 'o' : [':FlutterDevLog'                      , 'flutter visual debug'],
+      \ 'o' : [':FlutterVisualDebug'                 , 'flutter visual debug'],
+      \ 'c' : [':FlutterLogClear'                    , 'flutter log clear'],
       \ 'O' : [':FlutterOutline'                     , 'flutter Outline'],
       \ }
 
