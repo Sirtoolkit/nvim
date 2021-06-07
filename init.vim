@@ -29,7 +29,6 @@
   " Plugin Configuration - lua 
   luafile $HOME/.config/nvim/lua/dev-icons.lua
   luafile $HOME/.config/nvim/lua/nvim-compe.lua
-  luafile $HOME/.config/nvim/lua/lspkind-nvim.lua
   luafile $HOME/.config/nvim/lua/colorizer-nvim.lua
   luafile $HOME/.config/nvim/lua/galaxyline-nvim.lua
   luafile $HOME/.config/nvim/lua/bufferline-nvim.lua
@@ -41,5 +40,3 @@
   luafile $HOME/.config/nvim/lua/dapui-nvim.lua
   luafile $HOME/.config/nvim/lua/lspconfig-nvim.lua
   luafile $HOME/.config/nvim/lua/toggleterm-nvim.lua
-  luafile $HOME/.config/nvim/lua/colors-nvim.lua
-  luafile $HOME/.config/nvim/lua/trouble-nvim.lua

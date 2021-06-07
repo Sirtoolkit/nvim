@@ -56,7 +56,6 @@ use 'skywind3000/asyncrun.vim'
 use 'mattn/vim-gist'
 -- Colors
 use 'norcalli/nvim-colorizer.lua'
-use 'folke/lsp-colors.nvim'
 -- Intuitive buffer closing
 use {'ojroques/nvim-bufdel'}
 -- Debugging
@@ -64,14 +63,12 @@ use 'neovim/nvim-lspconfig'
 use 'kabouzeid/nvim-lspinstall'
 use 'hrsh7th/nvim-compe'
 use 'glepnir/lspsaga.nvim'
-use 'onsails/lspkind-nvim'
-use 'folke/trouble.nvim'
 -- Snippets
 use 'hrsh7th/vim-vsnip'
 use 'hrsh7th/vim-vsnip-integ'
 
-use 'honza/vim-snippets'
 use 'Nash0x7E2/awesome-flutter-snippets'
+use 'honza/vim-snippets'
 use 'dsznajder/vscode-es7-javascript-react-snippets'
 use 'rafamadriz/friendly-snippets'
 -- DB
