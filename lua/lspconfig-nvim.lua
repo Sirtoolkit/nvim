@@ -42,30 +42,6 @@ require'lspconfig'.dockerls.setup{}
 
 require'dependency_assist'.setup{}
 
-local config = require'lspconfig'.jdtls.document_config
-require'lspconfig/configs'.jdtls = nil -- important, unset the loaded config again
--- config.default_config.cmd[1] = "./node_modules/.bin/bash-language-server"
-
--- 2. extend the config with an install_script and (optionally) uninstall_script
-require'lspinstall/servers'.jdtls = vim.tbl_extend('error', config, {
-    -- lspinstall will automatically create/delete the install directory for every server
-    install_script = [[
-      git clone https://github.com/eclipse/eclipse.jdt.ls.git
-      cd eclipse.jdt.ls
-      ./mvnw clean verify
-  ]],
-    uninstall_script = nil -- can be omitted
-})
-
-require'lspinstall/servers'.kotlin = vim.tbl_extend('error', config, {
-    install_script = [[
-      git clone https://github.com/fwcd/kotlin-language-server.git language-server
-      cd language-server
-	  ./gradlew :server:installDist
-  ]],
-    uninstall_script = nil -- can be omitted
-})
-
 require'lspinstall'.setup()
 
 local servers = require'lspinstall'.installed_servers()
@@ -113,7 +89,7 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
   vim.lsp.diagnostic.on_publish_diagnostics, {
     virtual_text = {
       prefix = "",
-      spacing = 0,
+      spacing = 1,
     },
     signs = true,
     underline = true,
@@ -195,7 +171,7 @@ require'lspconfig'.pyright.setup {
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
--- html 
+-- html
 require'lspconfig'.html.setup {
     cmd = {"node", DATA_PATH .. "/lspinstall/html/vscode-html/html-language-features/server/dist/node/htmlServerMain.js", "--stdio"},
     on_attach = require'lspconfig'.common_on_attach,
@@ -216,51 +192,53 @@ require'lspconfig'.dartls.setup{
 }
 
 -- java
-local bundles = {
-    vim.fn.glob(
-        CONFIG_PATH.."/.debuggers/java-debug/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-*.jar")
-};
-
-local on_attach = function(client, bufr)
-    require('jdtls').setup_dap()
-    require'lspconfig'.common_on_attach(client, bufr)
-end
-
-require('jdtls').start_or_attach({
-    cmd = {"java-lsp"},
-    on_attach = on_attach,
-    root_dir = require('jdtls.setup').find_root({'build.gradle', 'pom.xml', '.git'}),
-    init_options = {bundles = bundles}
-})
-
--- kotlin
 local util = require 'lspconfig/util'
-
-local bin_name = DATA_PATH .. "/lspinstall/kotlin/language-server/server/build/install/server/bin/kotlin-language-server"
-if vim.fn.has('win32') == 1 then
-  bin_name = bin_name..".bat"
-end
 
 local root_files = {
   'settings.gradle',       -- Gradle (multi-project)
-  'settings.gradle.kts',   -- Gradle (multi-project)
   'build.xml',             -- Ant
   'pom.xml',               -- Maven
 }
-
 local fallback_root_files = {
   'build.gradle',          -- Gradle
-  'build.gradle.kts',      -- Gradle
 }
 
-require'lspconfig'.kotlin_language_server.setup {
-    cmd = {bin_name},
-    on_attach = require'lspconfig'.common_on_attach,
+require'lspconfig'.jdtls.setup{
+   cmd = { "/usr/lib/jvm/adoptopenjdk-11-hotspot-amd64/bin/java", "-Declipse.application=org.eclipse.jdt.ls.core.id1", "-Dosgi.bundles.defaultStartLevel=4", "-Declipse.product=org.eclipse.jdt.ls.core.product", "-Dlog.protocol=true", "-Dlog.level=ALL","-javaagent:/usr/local/share/lombok/lombok.jar", "-Xms1g", "-Xmx2G", "-jar", "vim.NIL", "-configuration", "vim.NIL", "-data", "vim.NIL", "--add-modules=ALL-SYSTEM", "--add-opens java.base/java.util=ALL-UNNAMED", "--add-opens java.base/java.lang=ALL-UNNAMED" },
+    cmd_env = {
+      GRADLE_HOME = "/usr/bin/gradle",
+      JAR = vim.NIL
+    },
+     handlers = {
+      ["textDocument/codeAction"] = {
+       dataSupport = true;
+        resolveSupport = {
+          properties = {'edit',}
+        };
+        codeActionLiteralSupport = {
+          codeActionKind = {
+            valueSet = {
+                "source.generate.toString",
+                "source.generate.hashCodeEquals",
+                "source.organizeImports",
+            };
+          };
+        };
+      }
+    },
+    filetypes = { "java" },
+    init_options = {
+      jvm_args = {},
+      workspace = "/home/runner/workspace"
+    },
     root_dir = function(fname)
       return util.root_pattern(unpack(root_files))(fname) or
       util.root_pattern(unpack(fallback_root_files))(fname)
     end
 }
+
+-- kotlin_language_server
+require'lspconfig'.kotlin_language_server.setup {}
 
 
 -- lua

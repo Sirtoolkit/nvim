@@ -40,3 +40,4 @@
   luafile $HOME/.config/nvim/lua/dapui-nvim.lua
   luafile $HOME/.config/nvim/lua/lspconfig-nvim.lua
   luafile $HOME/.config/nvim/lua/toggleterm-nvim.lua
+  luafile $HOME/.config/nvim/lua/colors-nvim.lua

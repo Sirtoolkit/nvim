@@ -8,4 +8,5 @@
     let g:gruvbox_material_diagnostic_text_highlight = 1
     let g:gruvbox_material_diagnostic_line_highlight = 1
     let g:gruvbox_material_palette ='original'
+
     colorscheme gruvbox-material
