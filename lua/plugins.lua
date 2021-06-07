@@ -21,7 +21,7 @@ use 'kyazdani42/nvim-tree.lua'
 -- Treesitter 
 use 'nvim-treesitter/nvim-treesitter'
 -- Rainbow
-use {'luochen1990/rainbow'}
+use 'luochen1990/rainbow'
 -- ScreenShot
 use {'jmckiern/vim-shoot',run='\"./install.py\" chromedriver' }
 -- Auto pairs for '(' '[' '{'
@@ -57,7 +57,7 @@ use 'mattn/vim-gist'
 -- Colors
 use 'norcalli/nvim-colorizer.lua'
 -- Intuitive buffer closing
-use {'ojroques/nvim-bufdel'}
+use 'ojroques/nvim-bufdel'
 -- Debugging
 use 'neovim/nvim-lspconfig'
 use 'kabouzeid/nvim-lspinstall'
