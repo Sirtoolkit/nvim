@@ -63,6 +63,7 @@ use 'neovim/nvim-lspconfig'
 use 'kabouzeid/nvim-lspinstall'
 use 'hrsh7th/nvim-compe'
 use 'glepnir/lspsaga.nvim'
+use 'mfussenegger/nvim-jdtls'
 -- Snippets
 use 'hrsh7th/vim-vsnip'
 use 'hrsh7th/vim-vsnip-integ'
